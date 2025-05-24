@@ -2,23 +2,21 @@ import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
-  return (
-    <div className="footer">
-      <p>&copy; 2024 EDROH. All Rights Reserved.</p>
-      <div className="footer__links">
-        {["About", "Privacy Policy", "Licensing", "Contact"].map((item) => (
-          <Link
-            key={item}
-            href={`/${item.toLowerCase().replace(" ", "-")}`}
-            className="footer__link"
-            scroll={false}
-          >
-            {item}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
+	return (
+		<div className="footer">
+			<p>&copy; 2025 VazeByte. Все права защищены.</p>
+			<div className="footer__links">
+				{["О нас", "Политика конфиденциальности", "Лицензирование", "Контакты"].map((item, index) => {
+					const urls = ["about", "privacy-policy", "licensing", "contact"];
+					return (
+						<Link key={item} href={`/${urls[index]}`} className="footer__link" scroll={false}>
+							{item}
+						</Link>
+					);
+				})}
+			</div>
+		</div>
+	);
 };
 
 export default Footer;

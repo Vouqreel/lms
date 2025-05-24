@@ -25,21 +25,21 @@ const AppSidebar = () => {
 
 	const navLinks = {
 		student: [
-			{ icon: BookOpen, label: "Courses", href: "/user/courses" },
-			{ icon: Briefcase, label: "Billing", href: "/user/billing" },
-			{ icon: User, label: "Profile", href: "/user/profile" },
-			{ icon: Settings, label: "Settings", href: "/user/settings" },
+			{ icon: BookOpen, label: "Курсы", href: "/user/courses" },
+			{ icon: Briefcase, label: "Оплата", href: "/user/billing" },
+			{ icon: User, label: "Профиль", href: "/user/profile" },
+			{ icon: Settings, label: "Настройки", href: "/user/settings" },
 		],
 		teacher: [
-			{ icon: BookOpen, label: "Courses", href: "/teacher/courses" },
-			{ icon: DollarSign, label: "Billing", href: "/teacher/billing" },
-			{ icon: User, label: "Profile", href: "/teacher/profile" },
-			{ icon: Settings, label: "Settings", href: "/teacher/settings" },
+			{ icon: BookOpen, label: "Курсы", href: "/teacher/courses" },
+			{ icon: DollarSign, label: "Оплата", href: "/teacher/billing" },
+			{ icon: User, label: "Профиль", href: "/teacher/profile" },
+			{ icon: Settings, label: "Настройки", href: "/teacher/settings" },
 		],
 	};
 
 	if (!isLoaded) return <Loading />;
-	if (!user) return <div>User not found</div>;
+	if (!user) return <div>Пользователь не найден</div>;
 
 	const userType = (user.publicMetadata.userType as "student" | "teacher") || "student";
 	const currentNavLinks = navLinks[userType];
@@ -61,7 +61,7 @@ const AppSidebar = () => {
 							<div className="app-sidebar__logo-container group">
 								<div className="app-sidebar__logo-wrapper">
 									<Image src="/logo.svg" alt="logo" width={25} height={20} className="app-sidebar__logo" />
-									<p className="app-sidebar__title">EDROH</p>
+									<p className="app-sidebar__title">VazeByte</p>
 								</div>
 								<PanelLeft className="app-sidebar__collapse-icon" />
 							</div>
@@ -104,7 +104,7 @@ const AppSidebar = () => {
 						<SidebarMenuButton asChild>
 							<button onClick={() => signOut()} className="app-sidebar__signout">
 								<LogOut className="mr-2 h-6 w-6" />
-								<span>Sign out</span>
+								<span>Выйти</span>
 							</button>
 						</SidebarMenuButton>
 					</SidebarMenuItem>

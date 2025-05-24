@@ -17,13 +17,13 @@ const NonDashboardNavbar = () => {
 			<div className="nondashboard-navbar__container">
 				<div className="nondashboard-navbar__search">
 					<Link href="/" className="nondashboard-navbar__brand" scroll={false}>
-						EDROH
+						VazeByte
 					</Link>
 					<div className="flex items-center gap-4">
 						<div className="relative group">
 							<Link href="/search" className="nondashboard-navbar__search-input" scroll={false}>
-								<span className="hidden sm:inline">Search Courses</span>
-								<span className="sm:hidden">Search</span>
+								<span className="hidden sm:inline">Поиск курсов</span>
+								<span className="sm:hidden">Искать</span>
 							</Link>
 							<BookOpen className="nondashboard-navbar__search-icon" size={18} />
 						</div>
@@ -51,10 +51,10 @@ const NonDashboardNavbar = () => {
 					</SignedIn>
 					<SignedOut>
 						<Link href="/signin" className="nondashboard-navbar__auth-button--login" scroll={false}>
-							Log in
+							Вход
 						</Link>
 						<Link href="/signup" className="nondashboard-navbar__auth-button--signup" scroll={false}>
-							Sign up
+							Регистрация
 						</Link>
 					</SignedOut>
 				</div>
