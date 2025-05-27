@@ -161,9 +161,6 @@ export const CustomFormField: React.FC<FormFieldProps> = ({
             acceptedFileTypes={acceptedFileTypes}
             labelIdle={`Drag & Drop your video files or <span class="filepond--label-action">Browse</span>`}
             credits={false}
-            maxFileSize="50MB"
-            allowFileSizeValidation={true}
-            allowFileTypeValidation={true}
           />
         );
       case "number":

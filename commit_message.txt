@@ -1,0 +1,8 @@
+Fix FilePond and ImageUpload TypeScript errors
+
+- Remove invalid FilePond properties (maxFileSize, allowFileSizeValidation, allowFileTypeValidation)
+- Wrap validateFile and handleFiles in useCallback with proper dependencies  
+- Replace <img> with <Image> from next/image for better optimization
+- Add missing Next.js Image import
+
+This fixes the Vercel deployment build errors.

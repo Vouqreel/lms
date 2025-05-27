@@ -3,6 +3,7 @@ import { Upload, X, Image as ImageIcon, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 interface ImageUploadProps {
   value?: File | null;
@@ -20,7 +21,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
   const [dragActive, setDragActive] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const validateFile = (file: File): boolean => {
+  const validateFile = useCallback((file: File): boolean => {
     setError(null);
     
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
@@ -36,16 +37,16 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
     }
 
     return true;
-  };
+  }, [maxSize]);
 
-  const handleFiles = (files: FileList | null) => {
+  const handleFiles = useCallback((files: FileList | null) => {
     if (!files || files.length === 0) return;
     
     const file = files[0];
     if (validateFile(file)) {
       onChange(file);
     }
-  };
+  }, [onChange, validateFile]);
 
   const handleDrag = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -70,7 +71,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
     setDragActive(false);
     
     handleFiles(e.dataTransfer.files);
-  }, []);
+  }, [handleFiles]);
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleFiles(e.target.files);
@@ -144,9 +145,11 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
           <CardContent className="p-4">
             <div className="flex items-start gap-4">
               <div className="relative flex-shrink-0">
-                <img
+                <Image
                   src={value instanceof File ? URL.createObjectURL(value) : ''}
                   alt="Preview"
+                  width={80}
+                  height={80}
                   className="w-20 h-20 object-cover rounded-lg border border-customgreys-dirtyGrey"
                 />
                 <div className="absolute -top-2 -right-2">
