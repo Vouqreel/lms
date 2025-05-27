@@ -1,381 +1,731 @@
 [
-  {
-    "courseId": "3a9f3d6c-c391-4b1c-9c3d-6c3f3d6c3f3d",
-    "teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
-    "teacherName": "John Doe",
-    "title": "Introduction to Programming",
-    "description": "Learn the basics of programming with this comprehensive course.",
-    "category": "Computer Science",
-    "image": "https://images.pexels.com/photos/5905888/pexels-photo-5905888.jpeg",
-    "price": 4999,
-    "level": "Beginner",
-    "status": "Published",
-    "enrollments": [
-      { "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB" },
-      { "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy" }
-    ],
-    "sections": [
-      {
-        "sectionId": "2f9d1e8b-5a3c-4b7f-9e6d-8c2a1f0b3d5e",
-        "sectionTitle": "Getting Started",
-        "sectionDescription": "Learn the basics of programming and set up your development environment.",
-        "chapters": [
-          {
-            "chapterId": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
-            "type": "Video",
-            "title": "Welcome to Programming",
-            "content": "https://example.com/videos/welcome.mp4",
-            "video": "https://example.com/videos/welcome.mp4",
-            "comments": [
-              {
-                "commentId": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
-                "userId": "emma.wilson@hotmail.com",
-                "text": "Great introduction!",
-                "timestamp": "2023-03-10T09:15:00Z"
-              }
-            ]
-          },
-          {
-            "chapterId": "b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7",
-            "type": "Text",
-            "title": "What is Programming?",
-            "content": "Programming is the process of creating instructions for computers to follow...",
-            "comments": []
-          },
-          {
-            "chapterId": "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
-            "type": "Quiz",
-            "title": "Programming Basics Quiz",
-            "content": "1. What is a variable?\n2. What is the difference between a compiler and an interpreter?\n3. Name three popular programming languages.",
-            "comments": []
-          }
-        ]
-      },
-      {
-        "sectionId": "3g0e2f9c-6d4e-5a7f-8b9g-1h2i3j4k5l6m",
-        "sectionTitle": "Basic Programming Concepts",
-        "sectionDescription": "Explore fundamental programming concepts and data types.",
-        "chapters": [
-          {
-            "chapterId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
-            "type": "Video",
-            "title": "Variables and Data Types",
-            "content": "https://example.com/videos/variables-data-types.mp4",
-            "video": "https://example.com/videos/variables-data-types.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-            "type": "Text",
-            "title": "Control Structures",
-            "content": "Control structures are fundamental elements in programming that allow you to control the flow of your program...",
-            "comments": []
-          },
-          {
-            "chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
-            "type": "Quiz",
-            "title": "Control Structures Quiz",
-            "content": "1. What is an if-else statement?\n2. Explain the purpose of a loop.\n3. What is a switch statement?",
-            "comments": []
-          }
-        ]
-      },
-      {
-        "sectionId": "4h1f3g0d-7e5f-6b8g-9c0h-2i3j4k5l6m7n",
-        "sectionTitle": "Functions and Modules",
-        "sectionDescription": "Learn how to organize your code using functions and modules.",
-        "chapters": [
-          {
-            "chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
-            "type": "Video",
-            "title": "Introduction to Functions",
-            "content": "https://example.com/videos/intro-to-functions.mp4",
-            "video": "https://example.com/videos/intro-to-functions.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
-            "type": "Text",
-            "title": "Creating and Using Modules",
-            "content": "Modules are a way to organize and reuse code across different parts of your program...",
-            "comments": []
-          },
-          {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
-            "type": "Quiz",
-            "title": "Functions and Modules Quiz",
-            "content": "1. What is the difference between a function and a method?\n2. How do you import a module in Python?\n3. What is the purpose of the 'return' statement in a function?",
-            "comments": []
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "courseId": "8b4f7d9c-4b1c-4b1c-8b4f-7d9c8b4f7d9c",
-    "teacherId": "user_4mNj68RtPvXw2Ky9Qc7HbSdAf",
-    "teacherName": "Alice Johnson",
-    "title": "Advanced Machine Learning",
-    "description": "Dive deep into machine learning algorithms and techniques.",
-    "category": "Artificial Intelligence",
-    "image": "https://images.pexels.com/photos/6303596/pexels-photo-6303596.jpeg",
-    "price": 9999,
-    "level": "Advanced",
-    "status": "Published",
-    "enrollments": [
-      { "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB" },
-      { "userId": "user_5vBn23WsLkMp7Jh4Gt8FxYcRz" }
-    ],
-    "sections": [
-      {
-        "sectionId": "1a7b3c5d-9e2f-4g6h-8i0j-2k4l6m8n0p1q",
-        "sectionTitle": "Neural Networks",
-        "sectionDescription": "Learn about neural networks and their applications.",
-        "chapters": [
-          {
-            "chapterId": "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
-            "type": "Video",
-            "title": "Introduction to Neural Networks",
-            "content": "https://example.com/videos/neural-networks-intro.mp4",
-            "videoLength": 1200,
-            "comments": [],
-            "videoUrl": "https://example.com/videos/neural-networks-intro.mp4",
-            "videoUniqueId": "vid_004",
-            "videoType": "hls"
-          },
-          {
-            "chapterId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
-            "type": "Quiz",
-            "title": "Neural Networks Quiz",
-            "content": "1. What is a neuron?\n2. Explain backpropagation.\n3. What is an activation function?",
-            "comments": []
-          },
-          {
-            "chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-            "type": "Text",
-            "title": "Types of Neural Networks",
-            "content": "There are various types of neural networks, each designed for specific tasks...",
-            "comments": []
-          }
-        ]
-      },
-      {
-        "sectionId": "2b8c4d6e-0f3g-5h7i-9j1k-3l5m7n9p1q3r",
-        "sectionTitle": "Deep Learning",
-        "sectionDescription": "Explore advanced deep learning techniques and architectures.",
-        "chapters": [
-          {
-            "chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
-            "type": "Video",
-            "title": "Convolutional Neural Networks",
-            "content": "https://example.com/videos/cnn-explained.mp4",
-            "videoLength": 1500,
-            "comments": [],
-            "videoUrl": "https://example.com/videos/cnn-explained.mp4",
-            "videoUniqueId": "vid_005",
-            "videoType": "dash"
-          },
-          {
-            "chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
-            "type": "Text",
-            "title": "Recurrent Neural Networks",
-            "content": "Recurrent Neural Networks (RNNs) are a class of neural networks designed to work with sequential data...",
-            "comments": []
-          },
-          {
-            "chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
-            "type": "Quiz",
-            "title": "Deep Learning Architectures Quiz",
-            "content": "1. What is the main advantage of CNNs?\n2. Explain the vanishing gradient problem in RNNs.\n3. What is transfer learning?",
-            "comments": []
-          }
-        ]
-      },
-      {
-        "sectionId": "3c9d5e7f-1g4h-6i8j-0k2l-4m6n8p0q2r4s",
-        "sectionTitle": "Advanced ML Algorithms",
-        "sectionDescription": "Study cutting-edge machine learning algorithms and their implementations.",
-        "chapters": [
-          {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
-            "type": "Video",
-            "title": "Generative Adversarial Networks",
-            "content": "https://example.com/videos/gan-explained.mp4",
-            "videoLength": 1800,
-            "comments": [],
-            "videoUrl": "https://example.com/videos/gan-explained.mp4",
-            "videoUniqueId": "vid_006",
-            "videoType": "mp4"
-          },
-          {
-            "chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
-            "type": "Text",
-            "title": "Reinforcement Learning",
-            "content": "Reinforcement Learning is a type of machine learning where an agent learns to make decisions by interacting with an environment...",
-            "comments": []
-          },
-          {
-            "chapterId": "k1l2m3n4-o5p6-q7r8-s9t0-u1v2w3x4y5z6",
-            "type": "Quiz",
-            "title": "Advanced ML Algorithms Quiz",
-            "content": "1. What are the components of a GAN?\n2. Explain the difference between Q-learning and policy gradients.\n3. What is the purpose of the discriminator in a GAN?",
-            "comments": []
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "courseId": "c5d6e7f8-g9h0-i1j2-k3l4-m5n6o7p8q9r0",
-    "teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
-    "teacherName": "John Doe",
-    "title": "Web Development Fundamentals",
-    "description": "Learn the basics of HTML, CSS, and JavaScript to build modern websites.",
-    "category": "Web Development",
-    "image": "https://images.pexels.com/photos/6001397/pexels-photo-6001397.jpeg",
-    "price": 7999,
-    "level": "Beginner",
-    "status": "Published",
-    "enrollments": [
-      { "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" },
-      { "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy" }
-    ],
-    "sections": [
-      {
-        "sectionId": "3e5f7g9h-1i3j-5k7l-9m1n-3o5p7q9r1s3t",
-        "sectionTitle": "HTML Basics",
-        "sectionDescription": "Learn the fundamentals of HTML.",
-        "chapters": [
-          {
-            "chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-            "type": "Video",
-            "title": "Introduction to HTML",
-            "content": "https://example.com/videos/intro-to-html.mp4",
-            "video": "https://example.com/videos/intro-to-html.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
-            "type": "Quiz",
-            "title": "HTML Tags Quiz",
-            "content": "1. What does HTML stand for?\n2. Name three basic HTML tags.\n3. What is the purpose of the <head> tag?",
-            "comments": []
-          },
-          {
-            "chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
-            "type": "Text",
-            "title": "HTML Forms and Input Elements",
-            "content": "HTML forms are used to collect user input. Learn about various input types and form elements...",
-            "comments": []
-          }
-        ]
-      },
-      {
-        "sectionId": "4f6g8h0i-2j4k-6l8m-0n2p-4q6r8s0t2u4v",
-        "sectionTitle": "CSS Styling",
-        "sectionDescription": "Learn how to style your HTML with CSS.",
-        "chapters": [
-          {
-            "chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
-            "type": "Video",
-            "title": "CSS Basics",
-            "content": "https://example.com/videos/css-basics.mp4",
-            "video": "https://example.com/videos/css-basics.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
-            "type": "Text",
-            "title": "CSS Layout Techniques",
-            "content": "Learn about different CSS layout techniques including Flexbox and Grid...",
-            "comments": []
-          },
-          {
-            "chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
-            "type": "Quiz",
-            "title": "CSS Styling Quiz",
-            "content": "1. What is the box model in CSS?\n2. Explain the difference between inline and block elements.\n3. How do you center an element horizontally and vertically using Flexbox?",
-            "comments": []
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "courseId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
-    "teacherId": "user_3rTg67LmZnXc4Vb8Wd0JyUhEq",
-    "teacherName": "Michael Brown",
-    "title": "Data Science Fundamentals",
-    "description": "Learn the basics of data science, including statistics, data visualization, and machine learning.",
-    "category": "Data Science",
-    "image": "https://images.pexels.com/photos/4491461/pexels-photo-4491461.jpeg",
-    "price": 8999,
-    "level": "Intermediate",
-    "status": "Published",
-    "enrollments": [
-      { "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" },
-      { "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy" }
-    ],
-    "sections": [
-      {
-        "sectionId": "4u6v8w0x-2y4z-6a8b-0c2d-4e6f8g0h2i4j",
-        "sectionTitle": "Introduction to Data Science",
-        "sectionDescription": "Learn the basics of data science and its applications.",
-        "chapters": [
-          {
-            "chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
-            "type": "Video",
-            "title": "What is Data Science?",
-            "content": "https://example.com/videos/what-is-data-science.mp4",
-            "video": "https://example.com/videos/what-is-data-science.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
-            "type": "Quiz",
-            "title": "Data Science Basics Quiz",
-            "content": "1. Define data science.\n2. What are the main components of data science?\n3. How does machine learning relate to data science?",
-            "comments": []
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "courseId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-    "teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
-    "teacherName": "John Doe",
-    "title": "Mobile App Development with React Native",
-    "description": "Build cross-platform mobile apps using React Native and JavaScript.",
-    "category": "Mobile Development",
-    "image": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
-    "price": 12999,
-    "level": "Advanced",
-    "status": "Published",
-    "enrollments": [{ "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" }],
-    "sections": [
-      {
-        "sectionId": "5k7l9m1n-3o5p-7q9r-1s3t-5u7v9w1x3y5z",
-        "sectionTitle": "Getting Started with React Native",
-        "sectionDescription": "Learn the basics of React Native development.",
-        "chapters": [
-          {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
-            "type": "Video",
-            "title": "Setting Up Your Development Environment",
-            "content": "https://example.com/videos/react-native-setup.mp4",
-            "video": "https://example.com/videos/react-native-setup.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
-            "type": "Text",
-            "title": "React Native Basics",
-            "content": "Learn about functions, objects, and other core concepts in JavaScript...",
-            "comments": []
-          }
-        ]
-      }
-    ]
-  }
+	{
+		"courseId": "3a9f3d6c-c391-4b1c-9c3d-6c3f3d6c3f3d",
+		"teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
+		"teacherName": "MaxGraph",
+		"title": "Назначение HTML-тегов",
+		"description": "Решил сделать разбор каждого html-тега, и показать на примере макетов, где какой тег лучше применять и почему",
+		"category": "Computer Science",
+		"image": "https://img.youtube.com/vi/fjBJMgGcd5k/maxresdefault.jpg",
+		"price": 4900,
+		"level": "Beginner",
+		"status": "Published",
+		"enrollments": [{ "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB" }, { "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy" }],
+		"sections": [
+			{
+				"sectionId": "2f9d1e8b-5a3c-4b7f-9e6d-8c2a1f0b3d5e",
+				"sectionTitle": "Базовые теги",
+				"sectionDescription": "Learn tПриветhe basics of programming and set up your development environment.",
+				"chapters": [
+					{
+						"chapterId": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+						"type": "Video",
+						"title": "Большой разбор заголовка h1",
+						"content": "Заголовок H1 является одним из самых важных HTML-элементов для структурирования веб-страниц. Это основной заголовок документа, который определяет главную тему или содержание страницы. H1 входит в иерархию заголовков от H1 до H6, где H1 имеет наивысший приоритет и значимость. В контексте SEO заголовок H1 играет критическую роль, поскольку поисковые системы используют его для понимания основной темы страницы. Google и другие поисковики придают большое значение содержимому H1 при определении релевантности страницы поисковым запросам. Правильно оптимизированный H1 может существенно улучшить позиции сайта в поисковой выдаче. С точки зрения пользователского опыта H1 служит своеобразным якорем для посетителей сайта, сразу сообщая им о чем будет страница. Хорошо написанный заголовок помогает пользователям быстро понять, найдут ли они нужную информацию на данной странице. Это особенно важно в эпоху короткого внимания пользователей, когда у вас есть всего несколько секунд, чтобы заинтересовать посетителя. При создании H1 важно следовать нескольким ключевым принципам. Во-первых, на странице должен быть только один H1 заголовок. Хотя HTML5 технически позволяет использовать несколько H1 в разных секциях, для SEO лучше придерживаться правила одного H1 на страницу. Во-вторых, H1 должен точно отражать содержание страницы и включать основное ключевое слово, по которому вы хотите ранжироваться. В-третьих, заголовок должен быть достаточно описательным, но не слишком длинным. Оптимальная длина H1 составляет от 20 до 70 символов. Семантическое значение H1 заключается в том, что он создает логическую структуру документа. После H1 должны следовать подзаголовки H2, затем H3 и так далее, образуя иерархическую структуру контента. Это не только помогает поисковым системам лучше понимать содержание, но и улучшает доступность сайта для людей с ограниченными возможностями, которые используют скрин-ридеры. Стилизация H1 также имеет большое значение. По умолчанию браузеры отображают H1 крупным жирным шрифтом, но вы можете кастомизировать его внешний вид с помощью CSS. Важно помнить, что визуальное оформление должно подчеркивать важность заголовка и делать его заметным на странице. Многие дизайнеры используют H1 как центральный элемент визуальной иерархии страницы. Распространенные ошибки при работе с H1 включают использование нескольких H1 на одной странице, создание слишком длинных или слишком коротких заголовков, игнорирование ключевых слов, использование H1 только для стилизации без семантического значения. Также ошибкой является создание H1, который не соответствует содержанию страницы или метатегу title. Современные тенденции в использовании H1 включают интеграцию с голосовым поиском, оптимизацию под длинные ключевые фразы и вопросы, адаптацию под мобильные устройства. Поскольку все больше людей используют голосовые помощники для поиска информации, H1 должен быть написан естественным языком и отвечать на конкретные вопросы пользователей. Мобильная оптимизация требует особого внимания к длине и читаемости H1 на маленьких экранах. Тестирование эффективности H1 можно проводить с помощью A/B тестов, анализа поведенческих метрик и отслеживания позиций в поисковой выдаче. Важно регулярно анализировать, как изменения в H1 влияют на трафик и конверсии. Инструменты веб-аналитики помогают понять, какие заголовки лучше удерживают внимание пользователей и приводят к достижению целей сайта.",
+						"video": "https://www.youtube.com/watch?v=fjBJMgGcd5k&t=120s",
+						"comments": []
+					},
+					{
+						"chapterId": "b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7",
+						"type": "Video",
+						"title": "Остальные заголовки",
+						"content": "Заголовки H2-H6 образуют иерархическую структуру веб-страницы после основного H1. H2 используется для главных разделов страницы и является вторым по важности после H1. Он помогает разбить контент на логические блоки и также учитывается поисковыми системами при определении структуры контента. H3 предназначен для подразделов внутри секций H2, создавая еще более детальную структуру. H4, H5 и H6 используются для более мелких подзаголовков и встречаются реже, обычно в очень длинных и структурированных материалах. Важно соблюдать последовательность заголовков - не стоит использовать H4 сразу после H2, пропуская H3. Правильная иерархия заголовков улучшает SEO, помогает поисковым роботам понимать структуру контента и улучшает пользовательский опыт. H2-H6 также можно оптимизировать под ключевые слова, но их вес в SEO меньше чем у H1. Стилизация этих заголовков должна визуально отражать их иерархию - каждый последующий уровень должен быть менее заметным чем предыдущий.",
+						"video": "https://www.youtube.com/watch?v=fjBJMgGcd5k&t=758s",
+						"comments": []
+					},
+					{
+						"chapterId": "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
+						"type": "Video",
+						"title": "Тег p и его разница со span",
+						"content": "Тег p предназначен для создания абзацев текста и является блочным элементом, что означает что каждый абзац автоматически начинается с новой строки и занимает всю доступную ширину контейнера. По умолчанию браузеры добавляют отступы сверху и снизу каждого абзаца для визуального разделения текста. Семантически p указывает на логически связанную группу предложений образующих единую мысль или тему. Тег span наоборот является строчным элементом и не создает переносов строк, используется для выделения отдельных слов или фраз внутри текста без нарушения потока. Span не имеет собственного семантического значения и служит в основном для применения стилей или JavaScript к определенным частям текста. В отличие от p тег span не добавляет никаких отступов или других визуальных эффектов по умолчанию. Основная разница заключается в том что p структурирует текст по смыслу создавая абзацы а span только помечает участки текста для оформления. Использование p улучшает SEO и доступность сайта поскольку поисковые системы и скрин-ридеры понимают структуру текста. Span же применяется когда нужно изменить стиль части текста не нарушая общую структуру абзаца.",
+						"video": "https://www.youtube.com/watch?v=fjBJMgGcd5k&t=1210s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "3g0e2f9c-6d4e-5a7f-8b9g-1h2i3j4k5l6m",
+				"sectionTitle": "Семантические теги",
+				"sectionDescription": "Изучаем семантические HTML теги для создания правильной структуры веб-страниц",
+				"chapters": [
+					{
+						"chapterId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+						"type": "Video",
+						"title": "Header - Создание шапки сайта",
+						"content": "Тег header определяет заголовочную область страницы или раздела. Обычно содержит логотип, навигацию, контактную информацию и другие элементы шапки сайта. Header является семантическим тегом который помогает поисковым системам и браузерам понимать структуру страницы.",
+						"video": "https://youtu.be/EuUz-oc-rg4?t=95s",
+						"comments": []
+					},
+					{
+						"chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
+						"type": "Video",
+						"title": "Footer - Подвал страницы и контакты",
+						"content": "Тег footer представляет нижнюю часть страницы или раздела. Обычно содержит информацию об авторских правах, ссылки на социальные сети, контактные данные, дополнительную навигацию и другую служебную информацию. Footer также является важным семантическим элементом для SEO оптимизации.",
+						"video": "https://youtu.be/EuUz-oc-rg4?t=220s",
+						"comments": []
+					},
+					{
+						"chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
+						"type": "Video",
+						"title": "Main - Основной контент страницы",
+						"content": "Тег main определяет основное содержимое документа. На странице должен быть только один main элемент который содержит уникальный контент страницы исключая повторяющиеся элементы как навигация, боковые панели, информация об авторских правах. Main помогает скрин-ридерам быстро находить главный контент.",
+						"video": "https://youtu.be/EuUz-oc-rg4?t=340s",
+						"comments": []
+					},
+					{
+						"chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
+						"type": "Video",
+						"title": "Section - Разделы и группировка контента",
+						"content": "Тег section представляет отдельный раздел документа который содержит связанный контент. Каждая секция обычно имеет собственный заголовок и тематически объединенное содержимое. Section используется для логического разделения контента на смысловые блоки что улучшает структуру и доступность страницы.",
+						"video": "https://youtu.be/EuUz-oc-rg4?t=410s",
+						"comments": []
+					},
+					{
+						"chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
+						"type": "Video",
+						"title": "Article - Статьи и независимый контент",
+						"content": "Тег article определяет независимый самодостаточный контент который может существовать отдельно от остальной страницы. Примеры включают статьи блога, новости, комментарии пользователей, посты форума. Article должен иметь смысл даже если его извлечь из контекста страницы что делает его идеальным для RSS лент и синдикации контента.",
+						"video": "https://youtu.be/EuUz-oc-rg4?t=580s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "4h1f3g0d-7e5f-6b8g-9c0h-2i3j4k5l6m7n",
+				"sectionTitle": "Теги форм",
+				"sectionDescription": "Изучаем HTML теги для создания интерактивных форм и сбора данных от пользователей",
+				"chapters": [
+					{
+						"chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
+						"type": "Video",
+						"title": "Form и Button - Основа веб-форм",
+						"content": "Тег form создает контейнер для сбора пользовательских данных и определяет способ их отправки на сервер. Атрибуты action и method контролируют куда и как отправляются данные. Тег button создает интерактивную кнопку которая может отправлять форму, сбрасывать данные или выполнять JavaScript функции.",
+						"video": "https://youtu.be/deWrpdiMDhY?t=20s",
+						"comments": []
+					},
+					{
+						"chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
+						"type": "Video",
+						"title": "Input - Поля ввода данных",
+						"content": "Тег input является основным элементом для сбора данных от пользователей. Поддерживает множество типов включая text, email, password, number, date, file и другие. Каждый тип input имеет свои особенности валидации и отображения что позволяет создавать удобные и безопасные формы.",
+						"video": "https://youtu.be/deWrpdiMDhY?t=120s",
+						"comments": []
+					},
+					{
+						"chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
+						"type": "Video",
+						"title": "Select, Option, Optgroup - Выпадающие списки",
+						"content": "Тег select создает выпадающий список для выбора одного или нескольких вариантов. Option определяет отдельные пункты списка с возможностью установки значений и предварительного выбора. Optgroup позволяет группировать связанные опции для лучшей организации больших списков.",
+						"video": "https://youtu.be/deWrpdiMDhY?t=270s",
+						"comments": []
+					},
+					{
+						"chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
+						"type": "Video",
+						"title": "Fieldset и Legend - Группировка полей формы",
+						"content": "Тег fieldset объединяет связанные элементы формы в логические группы и добавляет визуальную рамку вокруг них. Legend создает заголовок для группы fieldset объясняя назначение сгруппированных полей. Эти теги улучшают доступность форм и помогают пользователям лучше понимать структуру данных.",
+						"video": "https://youtu.be/deWrpdiMDhY?t=555s",
+						"comments": []
+					}
+				]
+			}
+		]
+	},
+
+	{
+		"courseId": "8b4f7d9c-4b1c-4b1c-8b4f-7d9c8b4f7d9c",
+		"teacherId": "user_4mNj68RtPvXw2Ky9Qc7HbSdAf",
+		"teacherName": "English Master",
+		"title": "Английский язык с нуля до продвинутого",
+		"description": "Практический курс английского языка от алфавита до свободного владения. Изучайте грамматику, лексику и произношение с помощью приложения English Galaxy.",
+		"category": "Languages",
+		"image": "https://img.youtube.com/vi/HJwTaPns-D0/maxresdefault.jpg",
+		"price": 5900,
+		"level": "Beginner",
+		"status": "Published",
+		"enrollments": [{ "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB" }, { "userId": "user_5vBn23WsLkMp7Jh4Gt8FxYcRz" }],
+		"sections": [
+			{
+				"sectionId": "1a7b3c5d-9e2f-4g6h-8i0j-2k4l6m8n0p1q",
+				"sectionTitle": "Алфавит и основы произношения",
+				"sectionDescription": "Изучаем английский алфавит, правила чтения и базовое произношение звуков",
+				"chapters": [
+					{
+						"chapterId": "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
+						"type": "Video",
+						"title": "Английский алфавит - правильное произношение",
+						"content": "Изучаем все 26 букв английского алфавита с правильным произношением. Учимся различать гласные и согласные звуки, запоминаем порядок букв и их названия. Это основа для дальнейшего изучения чтения и письма на английском языке.",
+						"video": "https://youtu.be/HJwTaPns-D0?t=30s",
+						"comments": []
+					},
+					{
+						"chapterId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+						"type": "Video",
+						"title": "Основные звуки и фонетика",
+						"content": "Изучаем основные звуки английского языка и их правильное произношение. Разбираем различия между русскими и английскими звуками, учимся читать транскрипцию и тренируем артикуляцию для четкого произношения.",
+						"video": "https://youtu.be/HJwTaPns-D0?t=480s",
+						"comments": []
+					},
+					{
+						"chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
+						"type": "Video",
+						"title": "Правила чтения и ударение",
+						"content": "Осваиваем основные правила чтения английских слов. Изучаем закрытые и открытые слоги, правила ударения в словах, исключения из правил чтения. Тренируемся читать простые слова и фразы правильно.",
+						"video": "https://youtu.be/HJwTaPns-D0?t=900s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "2b8c4d6e-0f3g-5h7i-9j1k-3l5m7n9p1q3r",
+				"sectionTitle": "Базовая грамматика и времена",
+				"sectionDescription": "Изучаем основы английской грамматики, порядок слов и времена глаголов",
+				"chapters": [
+					{
+						"chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
+						"type": "Video",
+						"title": "Порядок слов в предложении",
+						"content": "Изучаем базовый порядок слов в английском предложении. Разбираем структуру утвердительных, вопросительных и отрицательных предложений. Учимся строить простые фразы и правильно располагать подлежащее, сказуемое и дополнение.",
+						"video": "https://youtu.be/HJwTaPns-D0?t=1380s",
+						"comments": []
+					},
+					{
+						"chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
+						"type": "Video",
+						"title": "Present Simple - настоящее время",
+						"content": "Осваиваем настоящее простое время Present Simple. Изучаем правила образования утвердительных, отрицательных и вопросительных предложений. Разбираем случаи использования Present Simple и тренируемся на практических примерах.",
+						"video": "https://youtu.be/HJwTaPns-D0?t=1800s",
+						"comments": []
+					},
+					{
+						"chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
+						"type": "Video",
+						"title": "Глагол to be и местоимения",
+						"content": "Изучаем самый важный глагол английского языка to be в настоящем времени. Разбираем формы am, is, are и правила их использования. Осваиваем личные местоимения I, you, he, she, it, we, they и их роль в предложении.",
+						"video": "https://youtu.be/HJwTaPns-D0?t=2280s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "3c9d5e7f-1g4h-6i8j-0k2l-4m6n8p0q2r4s",
+				"sectionTitle": "Словарный запас и фразы",
+				"sectionDescription": "Пополняем словарный запас базовыми словами и полезными фразами для общения",
+				"chapters": [
+					{
+						"chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
+						"type": "Video",
+						"title": "Знакомство и приветствие",
+						"content": "Учим основные фразы для знакомства и приветствия на английском языке. Изучаем как представиться, поздороваться, попрощаться, спросить как дела. Тренируем произношение и запоминаем полезные выражения для первого общения.",
+						"video": "https://youtu.be/HJwTaPns-D0?t=2760s",
+						"comments": []
+					},
+					{
+						"chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
+						"type": "Video",
+						"title": "Семья и профессии",
+						"content": "Пополняем словарный запас словами на темы семья и профессии. Изучаем названия членов семьи, их произношение и использование в предложениях. Осваиваем базовые профессии и учимся рассказывать о работе и семье.",
+						"video": "https://youtu.be/HJwTaPns-D0?t=3240s",
+						"comments": []
+					},
+					{
+						"chapterId": "k1l2m3n4-o5p6-q7r8-s9t0-u1v2w3x4y5z6",
+						"type": "Video",
+						"title": "Числа, цвета и повседневные предметы",
+						"content": "Изучаем базовую лексику которая нужна каждый день. Осваиваем числа от 1 до 100 с правильным произношением, учим основные цвета и их оттенки, запоминаем названия повседневных предметов дома и на работе.",
+						"video": "https://youtu.be/HJwTaPns-D0?t=3720s",
+						"comments": []
+					}
+				]
+			}
+		]
+	},
+	{
+		"courseId": "c5d6e7f8-g9h0-i1j2-k3l4-m5n6o7p8q9r0",
+		"teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
+		"teacherName": "Yoga Master",
+		"title": "Йога для здоровой спины и ровной осанки",
+		"description": "Комплекс йога-упражнений для укрепления спины, улучшения осанки и снятия напряжения. Подходит для начинающих и тех, кто работает в офисе.",
+		"category": "Health & Fitness",
+		"image": "https://img.youtube.com/vi/WHVvdMbO7rA/maxresdefault.jpg",
+		"price": 2900,
+		"level": "Beginner",
+		"status": "Published",
+		"enrollments": [{ "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" }, { "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy" }],
+		"sections": [
+			{
+				"sectionId": "3e5f7g9h-1i3j-5k7l-9m1n-3o5p7q9r1s3t",
+				"sectionTitle": "Разминка и подготовка",
+				"sectionDescription": "Подготавливаем тело к основным упражнениям с помощью мягкой разминки",
+				"chapters": [
+					{
+						"chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
+						"type": "Video",
+						"title": "Дыхательные упражнения и настрой",
+						"content": "Начинаем практику с правильного дыхания и внутреннего настроя. Учимся глубокому диафрагмальному дыханию которое поможет расслабить тело и подготовить сознание к выполнению асан. Создаем спокойную атмосферу для практики.",
+						"video": "https://www.youtube.com/watch?v=WHVvdMbO7rA&t=2s",
+						"comments": []
+					},
+					{
+						"chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
+						"type": "Video",
+						"title": "Разминка шеи и плеч",
+						"content": "Мягко разминаем шейно-плечевую зону для снятия накопленного напряжения. Выполняем плавные повороты головы, подъемы плеч и круговые движения. Эти упражнения особенно важны для тех кто много времени проводит за компьютером.",
+						"video": "https://www.youtube.com/watch?v=WHVvdMbO7rA&t=120s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "4f6g8h0i-2j4k-6l8m-0n2p-4q6r8s0t2u4v",
+				"sectionTitle": "Основные упражнения для спины",
+				"sectionDescription": "Комплекс асан для укрепления мышц спины и снятия болевых ощущений",
+				"chapters": [
+					{
+						"chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
+						"type": "Video",
+						"title": "Поза кошки-коровы и вытяжения",
+						"content": "Выполняем классическую последовательность кошка-корова для мобилизации позвоночника. Эти движения помогают снять скованность в спине, улучшить гибкость и укрепить мышцы вдоль позвоночного столба. Движения выполняются плавно в ритме дыхания.",
+						"video": "https://www.youtube.com/watch?v=WHVvdMbO7rA&t=240s",
+						"comments": []
+					},
+					{
+						"chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
+						"type": "Video",
+						"title": "Укрепляющие асаны для глубоких мышц",
+						"content": "Переходим к более активным упражнениям для укрепления глубоких мышц спины. Выполняем позы которые активируют мышцы-стабилизаторы позвоночника и создают крепкий мышечный корсет. Особое внимание уделяем правильной технике выполнения.",
+						"video": "https://www.youtube.com/watch?v=WHVvdMbO7rA&t=420s",
+						"comments": []
+					},
+					{
+						"chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
+						"type": "Video",
+						"title": "Коррекция осанки и расслабление",
+						"content": "Работаем над правильной осанкой и завершаем практику расслаблением. Изучаем специальные упражнения которые помогают выровнять осанку и устранить сутулость. Завершаем глубоким расслаблением в позе шавасаны.",
+						"video": "https://www.youtube.com/watch?v=WHVvdMbO7rA&t=600s",
+						"comments": []
+					}
+				]
+			}
+		]
+	},
+	{
+		"courseId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+		"teacherId": "user_3rTg67LmZnXc4Vb8Wd0JyUhEq",
+		"teacherName": "Давай попробуем: JavaScript",
+		"title": "Введение и установка Tailwind CSS и версткой реального проекта",
+		"description": "Полный курс по современной верстке с Tailwind CSS. Создаем реальный проект от начала до конца, изучаем все возможности фреймворка и лучшие практики.",
+		"category": "Web Development",
+		"image": "https://img.youtube.com/vi/C4TQ_8au4K0/maxresdefault.jpg",
+		"price": 6900,
+		"level": "Intermediate",
+		"status": "Published",
+		"enrollments": [{ "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" }, { "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy" }],
+		"sections": [
+			{
+				"sectionId": "4u6v8w0x-2y4z-6a8b-0c2d-4e6f8g0h2i4j",
+				"sectionTitle": "Основы Tailwind CSS",
+				"sectionDescription": "Изучаем основные принципы работы с Tailwind CSS и настройку проекта",
+				"chapters": [
+					{
+						"chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
+						"type": "Video",
+						"title": "Введение в Tailwind CSS и установка",
+						"content": "Знакомимся с философией utility-first подхода в Tailwind CSS. Разбираем преимущества фреймворка перед традиционным CSS, изучаем процесс установки и первоначальной настройки проекта. Создаем базовую структуру файлов.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=30s",
+						"comments": []
+					},
+					{
+						"chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
+						"type": "Video",
+						"title": "Конфигурация и кастомизация",
+						"content": "Настраиваем файл tailwind.config.js под нужды проекта. Изучаем как добавлять кастомные цвета, шрифты, размеры и другие параметры. Разбираем структуру конфигурационного файла и его основные опции.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=180s",
+						"comments": []
+					},
+					{
+						"chapterId": "i8j9k0l1-m2n3-o4p5-q6r7-s8t9u0v1w2x3",
+						"type": "Video",
+						"title": "Базовые утилиты и классы",
+						"content": "Осваиваем основные утилитарные классы Tailwind для работы с отступами, размерами, цветами и типографикой. Изучаем систему именования классов и логику построения стилей через утилиты.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=360s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "5v7w9x1y-3z5a-7b9c-1d3e-5f7g9h1i3j5k",
+				"sectionTitle": "Компоненты и макетирование",
+				"sectionDescription": "Создаем переиспользуемые компоненты и изучаем системы макетирования",
+				"chapters": [
+					{
+						"chapterId": "j9k0l1m2-n3o4-p5q6-r7s8-t9u0v1w2x3y4",
+						"type": "Video",
+						"title": "Flexbox и Grid в Tailwind",
+						"content": "Изучаем мощные возможности CSS Grid и Flexbox через утилиты Tailwind. Создаем сложные макеты используя классы для выравнивания, распределения пространства и позиционирования элементов.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=540s",
+						"comments": []
+					},
+					{
+						"chapterId": "k0l1m2n3-o4p5-q6r7-s8t9-u0v1w2x3y4z5",
+						"type": "Video",
+						"title": "Создание карточек и компонентов",
+						"content": "Разрабатываем переиспользуемые компоненты интерфейса - карточки товаров, кнопки, формы. Изучаем как комбинировать утилиты для создания сложных элементов дизайна с эффектами наведения и состояниями.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=720s",
+						"comments": []
+					},
+					{
+						"chapterId": "l1m2n3o4-p5q6-r7s8-t9u0-v1w2x3y4z5a6",
+						"type": "Video",
+						"title": "Работа с формами и интерактивностью",
+						"content": "Стилизуем формы используя утилиты Tailwind. Создаем красивые поля ввода, кнопки, чекбоксы и селекты. Добавляем интерактивные состояния focus, hover, active для улучшения пользовательского опыта.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=900s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "6w8x0y2z-4a6b-8c0d-2e4f-6g8h0i2j4k6l",
+				"sectionTitle": "Адаптивный дизайн",
+				"sectionDescription": "Создаем отзывчивые интерфейсы для всех устройств с помощью Tailwind",
+				"chapters": [
+					{
+						"chapterId": "m2n3o4p5-q6r7-s8t9-u0v1-w2x3y4z5a6b7",
+						"type": "Video",
+						"title": "Breakpoints и адаптивные утилиты",
+						"content": "Изучаем систему брейкпоинтов в Tailwind CSS и создаем адаптивные макеты. Разбираем мобильный подход mobile-first и учимся применять разные стили для различных размеров экранов.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=1080s",
+						"comments": []
+					},
+					{
+						"chapterId": "n3o4p5q6-r7s8-t9u0-v1w2-x3y4z5a6b7c8",
+						"type": "Video",
+						"title": "Мобильная навигация и меню",
+						"content": "Создаем адаптивную навигацию которая красиво работает на всех устройствах. Разрабатываем burger-меню для мобильных устройств и горизонтальную навигацию для десктопа используя только утилиты Tailwind.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=1260s",
+						"comments": []
+					},
+					{
+						"chapterId": "o4p5q6r7-s8t9-u0v1-w2x3-y4z5a6b7c8d9",
+						"type": "Video",
+						"title": "Адаптивные сетки и галереи",
+						"content": "Создаем адаптивные галереи изображений и сетки контента которые красиво перестраиваются на разных экранах. Изучаем продвинутые техники работы с CSS Grid в Tailwind для создания сложных макетов.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=1440s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "7x9y1z3a-5b7c-9d1e-3f5g-7h9i1j3k5l7m",
+				"sectionTitle": "Реальный проект - Landing Page",
+				"sectionDescription": "Создаем полноценную посадочную страницу от начала до конца",
+				"chapters": [
+					{
+						"chapterId": "p5q6r7s8-t9u0-v1w2-x3y4-z5a6b7c8d9e0",
+						"type": "Video",
+						"title": "Планирование и структура проекта",
+						"content": "Анализируем дизайн-макет и планируем структуру HTML. Разбиваем страницу на логические секции и компоненты. Определяем какие утилиты Tailwind понадобятся для реализации дизайна.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=1620s",
+						"comments": []
+					},
+					{
+						"chapterId": "q6r7s8t9-u0v1-w2x3-y4z5-a6b7c8d9e0f1",
+						"type": "Video",
+						"title": "Создание шапки и навигации",
+						"content": "Верстаем header сайта с логотипом, навигационным меню и кнопками. Делаем навигацию адаптивной и добавляем эффекты при взаимодействии. Создаем фиксированную шапку при скролле.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=1800s",
+						"comments": []
+					},
+					{
+						"chapterId": "r7s8t9u0-v1w2-x3y4-z5a6-b7c8d9e0f1g2",
+						"type": "Video",
+						"title": "Hero секция и призыв к действию",
+						"content": "Создаем главную hero-секцию с заголовком, описанием и call-to-action кнопками. Добавляем фоновые изображения, градиенты и анимации. Делаем секцию максимально привлекательной и конверсионной.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=1980s",
+						"comments": []
+					},
+					{
+						"chapterId": "s8t9u0v1-w2x3-y4z5-a6b7-c8d9e0f1g2h3",
+						"type": "Video",
+						"title": "Секции с контентом и features",
+						"content": "Разрабатываем секции с описанием преимуществ, характеристик продукта и другим контентом. Создаем красивые иконки, карточки и блоки информации используя утилиты Tailwind для типографики и компоновки.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=2160s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "8y0z2a4b-6c8d-0e2f-4g6h-8i0j2k4l6m8n",
+				"sectionTitle": "Оптимизация и продакшн",
+				"sectionDescription": "Готовим проект к выпуску и оптимизируем производительность",
+				"chapters": [
+					{
+						"chapterId": "t9u0v1w2-x3y4-z5a6-b7c8-d9e0f1g2h3i4",
+						"type": "Video",
+						"title": "Purge CSS и оптимизация размера",
+						"content": "Настраиваем удаление неиспользуемых стилей для минимизации итогового размера CSS файла. Изучаем как работает PurgeCSS в Tailwind и как правильно его настроить для продакшн сборки.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=2340s",
+						"comments": []
+					},
+					{
+						"chapterId": "u0v1w2x3-y4z5-a6b7-c8d9-e0f1g2h3i4j5",
+						"type": "Video",
+						"title": "Кастомные компоненты и директивы",
+						"content": "Создаем переиспользуемые компоненты используя директивы @apply и @component. Изучаем когда стоит создавать кастомные классы вместо использования множества утилит.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=2520s",
+						"comments": []
+					},
+					{
+						"chapterId": "v1w2x3y4-z5a6-b7c8-d9e0-f1g2h3i4j5k6",
+						"type": "Video",
+						"title": "Финальная оптимизация и деплой",
+						"content": "Финальная проверка проекта, тестирование на разных устройствах и браузерах. Оптимизируем загрузку стилей, проверяем доступность и готовим проект к размещению на хостинге.",
+						"video": "https://youtu.be/C4TQ_8au4K0?t=2700s",
+						"comments": []
+					}
+				]
+			}
+		]
+	},
+	{
+		"courseId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
+		"teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
+		"teacherName": "TeaCoder",
+		"title": "Создай свой Uber Eats: Полное приложение доставки еды на React Native",
+		"description": "Создаем полноценное приложение для доставки еды с нуля. Backend на Node.js, фронтенд на React Native, интеграция с платежными системами и все современные технологии.",
+		"category": "Mobile Development",
+		"image": "https://img.youtube.com/vi/JTKN5m6UtIY/maxresdefault.jpg",
+		"price": 10900,
+		"level": "Advanced",
+		"status": "Published",
+		"enrollments": [{ "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" }],
+		"sections": [
+			{
+				"sectionId": "5k7l9m1n-3o5p-7q9r-1s3t-5u7v9w1x3y5z",
+				"sectionTitle": "Основы проекта и демо",
+				"sectionDescription": "Знакомимся с проектом, изучаем технологический стек и смотрим финальный результат",
+				"chapters": [
+					{
+						"chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
+						"type": "Video",
+						"title": "Стэк проекта и обзор технологий",
+						"content": "Разбираем какие технологии будем использовать для создания приложения доставки еды. Изучаем React Native, Node.js, Express, PostgreSQL, Stripe и другие инструменты. Понимаем архитектуру всего проекта.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=32s",
+						"comments": []
+					},
+					{
+						"chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
+						"type": "Video",
+						"title": "ДЕМО готового приложения",
+						"content": "Смотрим на финальный результат - полностью рабочее приложение для доставки еды. Изучаем все функции: регистрацию, каталог товаров, корзину, оплату, профиль пользователя. Понимаем что именно будем создавать.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=95s",
+						"comments": []
+					},
+					{
+						"chapterId": "k1l2m3n4-o5p6-q7r8-s9t0-u1v2w3x4y5z6",
+						"type": "Video",
+						"title": "Разворачиваем backend проекта",
+						"content": "Начинаем работу с серверной частью приложения. Настраиваем Node.js проект, устанавливаем необходимые зависимости, создаем основную структуру файлов и папок для backend части.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=266s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "6l8m0n2o-4p6q-8r0s-2t4u-6v8w0x2y4z6a",
+				"sectionTitle": "Backend и база данных",
+				"sectionDescription": "Создаем серверную часть с базой данных, API и системой авторизации",
+				"chapters": [
+					{
+						"chapterId": "l2m3n4o5-p6q7-r8s9-t0u1-v2w3x4y5z6a7",
+						"type": "Video",
+						"title": "Создание и настройка базы данных",
+						"content": "Настраиваем PostgreSQL базу данных для нашего приложения. Создаем таблицы для пользователей, категорий, продуктов, заказов. Изучаем схему базы данных и связи между таблицами.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=521s",
+						"comments": []
+					},
+					{
+						"chapterId": "m3n4o5p6-q7r8-s9t0-u1v2-w3x4y5z6a7b8",
+						"type": "Video",
+						"title": "Система авторизации и JWT токены",
+						"content": "Реализуем полную систему авторизации пользователей. Создаем регистрацию, вход, работу с JWT токенами, middleware для защиты роутов. Изучаем лучшие практики безопасности.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=1080s",
+						"comments": []
+					},
+					{
+						"chapterId": "n4o5p6q7-r8s9-t0u1-v2w3-x4y5z6a7b8c9",
+						"type": "Video",
+						"title": "Генерация сущностей и ORM",
+						"content": "Используем ORM для работы с базой данных. Генерируем все необходимые сущности, создаем модели данных, настраиваем связи между таблицами. Автоматизируем работу с базой данных.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=2591s",
+						"comments": []
+					},
+					{
+						"chapterId": "o5p6q7r8-s9t0-u1v2-w3x4-y5z6a7b8c9d0",
+						"type": "Video",
+						"title": "API для категорий и продуктов",
+						"content": "Создаем REST API для работы с категориями и продуктами. Разрабатываем контроллеры и сервисы, реализуем CRUD операции, тестируем все эндпоинты. Добавляем валидацию данных и обработку ошибок.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=2640s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "7m9n1o3p-5q7r-9s1t-3u5v-7w9x1y3z5a7b",
+				"sectionTitle": "React Native фронтенд",
+				"sectionDescription": "Начинаем работу с мобильным приложением на React Native",
+				"chapters": [
+					{
+						"chapterId": "p6q7r8s9-t0u1-v2w3-x4y5-z6a7b8c9d0e1",
+						"type": "Video",
+						"title": "Введение в React Native",
+						"content": "Изучаем что такое React Native, его преимущества и отличия от обычного React. Понимаем как создавать кроссплатформенные мобильные приложения используя знания веб-разработки.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=4215s",
+						"comments": []
+					},
+					{
+						"chapterId": "q7r8s9t0-u1v2-w3x4-y5z6-a7b8c9d0e1f2",
+						"type": "Video",
+						"title": "Разворачиваем фронтенд проект",
+						"content": "Создаем новый React Native проект, устанавливаем необходимые зависимости, настраиваем среду разработки. Изучаем структуру проекта и основные конфигурационные файлы.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=4262s",
+						"comments": []
+					},
+					{
+						"chapterId": "r8s9t0u1-v2w3-x4y5-z6a7-b8c9d0e1f2g3",
+						"type": "Video",
+						"title": "Навигация в React Native приложении",
+						"content": "Настраиваем React Navigation для навигации между экранами. Создаем Stack Navigator, Tab Navigator, изучаем различные типы переходов и анимаций. Реализуем структуру навигации для всего приложения.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=4886s",
+						"comments": []
+					},
+					{
+						"chapterId": "s9t0u1v2-w3x4-y5z6-a7b8-c9d0e1f2g3h4",
+						"type": "Video",
+						"title": "Tailwind CSS в React Native",
+						"content": "Подключаем и настраиваем NativeWind для использования Tailwind CSS классов в React Native. Изучаем как стилизовать компоненты используя привычные утилитарные классы.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=5447s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "8n0o2p4q-6r8s-0t2u-4v6w-8x0y2z4a6b8c",
+				"sectionTitle": "Авторизация и компоненты",
+				"sectionDescription": "Создаем систему авторизации и переиспользуемые компоненты",
+				"chapters": [
+					{
+						"chapterId": "t0u1v2w3-x4y5-z6a7-b8c9-d0e1f2g3h4i5",
+						"type": "Video",
+						"title": "Формы авторизации с React Hook Form",
+						"content": "Создаем красивые формы для входа и регистрации используя React Hook Form. Добавляем валидацию полей, обработку ошибок, показ состояний загрузки. Делаем формы удобными и интуитивными.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=5546s",
+						"comments": []
+					},
+					{
+						"chapterId": "u1v2w3x4-y5z6-a7b8-c9d0-e1f2g3h4i5j6",
+						"type": "Video",
+						"title": "Переиспользуемые компоненты UI",
+						"content": "Разрабатываем набор переиспользуемых компонентов: кнопки, текстовые поля, заголовки. Создаем типизированные Generic компоненты которые можно использовать по всему приложению.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=6327s",
+						"comments": []
+					},
+					{
+						"chapterId": "v2w3x4y5-z6a7-b8c9-d0e1-f2g3h4i5j6k7",
+						"type": "Video",
+						"title": "AuthContext и управление состоянием",
+						"content": "Создаем контекст для управления состоянием авторизации. Реализуем провайдер аутентификации, хуки для работы с пользователем, защищенные роуты и splash screen при загрузке.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=6923s",
+						"comments": []
+					},
+					{
+						"chapterId": "w3x4y5z6-a7b8-c9d0-e1f2-g3h4i5j6k7l8",
+						"type": "Video",
+						"title": "API клиент и интерсепторы",
+						"content": "Настраиваем HTTP клиент для работы с API. Создаем интерсепторы для автоматического добавления токенов, обновления токенов, обработки ошибок. Реализуем сервисы для всех API запросов.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=8208s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "9o1p3q5r-7s9t-1u3v-5w7x-9y1z3a5b7c9d",
+				"sectionTitle": "Основные страницы приложения",
+				"sectionDescription": "Создаем главные экраны: профиль, каталог, поиск, детальные страницы",
+				"chapters": [
+					{
+						"chapterId": "x4y5z6a7-b8c9-d0e1-f2g3-h4i5j6k7l8m9",
+						"type": "Video",
+						"title": "Layout и страница профиля",
+						"content": "Создаем общий layout для приложения с навигацией и боковым меню. Разрабатываем страницу профиля пользователя с возможностью редактирования данных, просмотра истории заказов и настроек.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=10166s",
+						"comments": []
+					},
+					{
+						"chapterId": "y5z6a7b8-c9d0-e1f2-g3h4-i5j6k7l8m9n0",
+						"type": "Video",
+						"title": "Главная страница и каталог",
+						"content": "Разрабатываем главную страницу с категориями товаров, популярными блюдами, поиском. Создаем каталог с фильтрацией по категориям, сортировкой и пагинацией. Добавляем красивые карточки товаров.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=10488s",
+						"comments": []
+					},
+					{
+						"chapterId": "z6a7b8c9-d0e1-f2g3-h4i5-j6k7l8m9n0o1",
+						"type": "Video",
+						"title": "Поиск и фильтрация товаров",
+						"content": "Реализуем мощную систему поиска товаров по названию, описанию, категориям. Добавляем фильтры по цене, рейтингу, времени доставки. Создаем удобный интерфейс для работы с большим количеством товаров.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=11757s",
+						"comments": []
+					},
+					{
+						"chapterId": "a7b8c9d0-e1f2-g3h4-i5j6-k7l8m9n0o1p2",
+						"type": "Video",
+						"title": "Детальные страницы товаров",
+						"content": "Создаем подробные страницы для каждого товара с фотографиями, описанием, отзывами, вариантами заказа. Добавляем возможность добавления в избранное, выбора количества, дополнительных опций.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=12418s",
+						"comments": []
+					}
+				]
+			},
+			{
+				"sectionId": "0p2q4r6s-8t0u-2v4w-6x8y-0z2a4b6c8d0e",
+				"sectionTitle": "Корзина и система оплаты",
+				"sectionDescription": "Реализуем корзину покупок и интеграцию с платежной системой Stripe",
+				"chapters": [
+					{
+						"chapterId": "b8c9d0e1-f2g3-h4i5-j6k7-l8m9n0o1p2q3",
+						"type": "Video",
+						"title": "Redux для управления корзиной",
+						"content": "Настраиваем Redux Toolkit для управления состоянием корзины. Создаем actions, reducers, selectors для добавления, удаления, изменения количества товаров. Реализуем персистентное хранение корзины.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=13160s",
+						"comments": []
+					},
+					{
+						"chapterId": "c9d0e1f2-g3h4-i5j6-k7l8-m9n0o1p2q3r4",
+						"type": "Video",
+						"title": "Функционал корзины и избранного",
+						"content": "Создаем полноценную корзину с возможностью изменения количества товаров, удаления позиций, расчета общей стоимости. Добавляем систему избранного для сохранения понравившихся товаров.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=13531s",
+						"comments": []
+					},
+					{
+						"chapterId": "d0e1f2g3-h4i5-j6k7-l8m9-n0o1p2q3r4s5",
+						"type": "Video",
+						"title": "Интеграция с платежной системой Stripe",
+						"content": "Подключаем Stripe для обработки платежей. Создаем безопасную систему оплаты, обрабатываем различные способы платежа, добавляем подтверждение заказов и уведомления об успешной оплате.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=14260s",
+						"comments": []
+					},
+					{
+						"chapterId": "e1f2g3h4-i5j6-k7l8-m9n0-o1p2q3r4s5t6",
+						"type": "Video",
+						"title": "Финализация проекта и деплой",
+						"content": "Завершаем разработку приложения, проводим финальное тестирование всех функций. Подготавливаем приложение к деплою, настраиваем продакшн сборку, публикуем в App Store и Google Play.",
+						"video": "https://youtu.be/JTKN5m6UtIY?t=14944s",
+						"comments": []
+					}
+				]
+			}
+		]
+	}
 ]

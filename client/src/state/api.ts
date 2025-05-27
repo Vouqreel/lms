@@ -37,7 +37,14 @@ const customBaseQuery = async (
 
     if (isMutationRequest) {
       const successMessage = result.data?.message;
-      if (successMessage) toast.success(successMessage);
+      const url = typeof args === 'string' ? args : (args as FetchArgs).url;
+      
+      // Не показываем toast для промежуточных операций загрузки файлов
+      const isFileUploadEndpoint = url?.includes('/get-upload-') || url?.includes('get-upload-image-url');
+      
+      if (successMessage && !isFileUploadEndpoint) {
+        toast.success(successMessage);
+      }
     }
 
     if (result.data) {
@@ -146,6 +153,17 @@ export const api = createApi({
       }),
     }),
 
+    getUploadImageUrl: build.mutation<
+      { uploadUrl: string; imageUrl: string },
+      { fileName: string; fileType: string }
+    >({
+      query: ({ fileName, fileType }) => ({
+        url: `courses/get-upload-image-url`,
+        method: "POST",
+        body: { fileName, fileType },
+      }),
+    }),
+
     /* 
     ===============
     TRANSACTIONS
@@ -241,6 +259,7 @@ export const {
   useGetCoursesQuery,
   useGetCourseQuery,
   useGetUploadVideoUrlMutation,
+  useGetUploadImageUrlMutation,
   useGetTransactionsQuery,
   useCreateTransactionMutation,
   useCreateStripePaymentIntentMutation,

@@ -12,6 +12,7 @@ import {
   createClerkClient,
   requireAuth,
 } from "@clerk/express";
+
 /* ROUTE IMPORTS */
 import courseRoutes from "./routes/courseRoutes";
 import userClerkRoutes from "./routes/userClerkRoutes";
@@ -22,7 +23,11 @@ import userCourseProgressRoutes from "./routes/userCourseProgressRoutes";
 dotenv.config();
 const isProduction = process.env.NODE_ENV === "production";
 if (!isProduction) {
-  dynamoose.aws.ddb.local();
+  try {
+    dynamoose.aws.ddb.local();
+  } catch (error) {
+    console.warn("Warning: Could not configure local DynamoDB:", (error as Error).message);
+  }
 }
 
 export const clerkClient = createClerkClient({
@@ -50,7 +55,7 @@ app.use("/transactions", requireAuth(), transactionRoutes);
 app.use("/users/course-progress", requireAuth(), userCourseProgressRoutes);
 
 /* SERVER */
-const port = process.env.PORT || 3000;
+const port = Number(process.env.PORT) || 8001;
 if (!isProduction) {
   app.listen(port, () => {
     console.log(`Server running on port ${port}`);

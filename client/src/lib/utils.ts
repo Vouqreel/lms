@@ -290,7 +290,8 @@ export const customDataGridStyles = {
 
 export const createCourseFormData = (
   data: CourseFormData,
-  sections: Section[]
+  sections: Section[],
+  imageUrl?: string
 ): FormData => {
   const formData = new FormData();
   formData.append("title", data.courseTitle);
@@ -298,6 +299,11 @@ export const createCourseFormData = (
   formData.append("category", data.courseCategory);
   formData.append("price", data.coursePrice.toString());
   formData.append("status", data.courseStatus ? "Published" : "Draft");
+  
+  // Add image URL if provided
+  if (imageUrl) {
+    formData.append("image", imageUrl);
+  }
 
   const sectionsWithVideos = sections.map((section) => ({
     ...section,
@@ -386,3 +392,47 @@ async function uploadVideo(
     throw error;
   }
 }
+
+export const uploadCourseImage = async (
+  imageFile: File,
+  getUploadImageUrl: any
+): Promise<string> => {
+  // Validate file type
+  const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+  if (!allowedTypes.includes(imageFile.type.toLowerCase())) {
+    toast.error("Поддерживаются только изображения (JPEG, PNG, GIF, WebP)");
+    throw new Error("Unsupported file type");
+  }
+
+  // Validate file size (5MB max)
+  const maxSize = 5 * 1024 * 1024;
+  if (imageFile.size > maxSize) {
+    toast.error("Размер файла не должен превышать 5MB");
+    throw new Error("File too large");
+  }
+
+  try {
+    const { uploadUrl, imageUrl } = await getUploadImageUrl({
+      fileName: imageFile.name,
+      fileType: imageFile.type,
+    }).unwrap();
+
+    const uploadResponse = await fetch(uploadUrl, {
+      method: "PUT",
+      headers: {
+        "Content-Type": imageFile.type,
+      },
+      body: imageFile,
+    });
+
+    if (!uploadResponse.ok) {
+      throw new Error(`Upload failed with status: ${uploadResponse.status}`);
+    }
+    
+    return imageUrl;
+  } catch (error) {
+    console.error("Failed to upload course image:", error);
+    toast.error("Ошибка при загрузке изображения");
+    throw error;
+  }
+};

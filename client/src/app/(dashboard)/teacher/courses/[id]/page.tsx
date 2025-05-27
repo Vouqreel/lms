@@ -5,9 +5,14 @@ import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { courseSchema } from "@/lib/schemas";
-import { centsToDollars, createCourseFormData, uploadAllVideos } from "@/lib/utils";
+import { centsToDollars, createCourseFormData, uploadAllVideos, uploadCourseImage } from "@/lib/utils";
 import { openSectionModal, setSections } from "@/state";
-import { useGetCourseQuery, useUpdateCourseMutation, useGetUploadVideoUrlMutation } from "@/state/api";
+import {
+	useGetCourseQuery,
+	useUpdateCourseMutation,
+	useGetUploadVideoUrlMutation,
+	useGetUploadImageUrlMutation,
+} from "@/state/api";
 import { useAppDispatch, useAppSelector } from "@/state/redux";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, Plus } from "lucide-react";
@@ -25,6 +30,7 @@ const CourseEditor = () => {
 	const { data: course, isLoading, refetch } = useGetCourseQuery(id);
 	const [updateCourse] = useUpdateCourseMutation();
 	const [getUploadVideoUrl] = useGetUploadVideoUrlMutation();
+	const [getUploadImageUrl] = useGetUploadImageUrlMutation();
 
 	const dispatch = useAppDispatch();
 	const { sections } = useAppSelector((state) => state.global.courseEditor);
@@ -37,6 +43,7 @@ const CourseEditor = () => {
 			courseCategory: "",
 			coursePrice: "0",
 			courseStatus: false,
+			courseImage: undefined,
 		},
 	});
 
@@ -48,6 +55,7 @@ const CourseEditor = () => {
 				courseCategory: course.category,
 				coursePrice: centsToDollars(course.price),
 				courseStatus: course.status === "Published",
+				courseImage: undefined, // Всегда починаем с пустого поля
 			});
 			dispatch(setSections(course.sections || []));
 		}
@@ -57,12 +65,29 @@ const CourseEditor = () => {
 		try {
 			const updatedSections = await uploadAllVideos(sections, id, getUploadVideoUrl);
 
-			const formData = createCourseFormData(data, updatedSections);
+			// Handle image upload if a new image was selected
+			let imageUrl = course?.image; // Keep existing image by default
+			if (data.courseImage instanceof File) {
+				try {
+					imageUrl = await uploadCourseImage(data.courseImage, getUploadImageUrl);
+				} catch (error) {
+					console.error("Failed to upload image:", error);
+					// Continue with existing image if upload fails
+					return; // Don't proceed with course update if image upload fails
+				}
+			}
+
+			const formData = createCourseFormData(data, updatedSections, imageUrl || undefined);
 
 			await updateCourse({
 				courseId: id,
 				formData,
 			}).unwrap();
+
+			// Очистить поле изображения после успешного сохранения курса
+			if (data.courseImage instanceof File) {
+				methods.setValue("courseImage", undefined);
+			}
 
 			refetch();
 		} catch (error) {
@@ -149,6 +174,14 @@ const CourseEditor = () => {
 									type="number"
 									placeholder="0"
 									initialValue={course?.price}
+								/>
+
+								<CustomFormField
+									name="courseImage"
+									label="Изображение курса"
+									type="file"
+									accept="image/*"
+									placeholder="Выберите изображение для курса"
 								/>
 							</div>
 						</div>

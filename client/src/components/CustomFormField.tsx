@@ -30,7 +30,9 @@ import "filepond/dist/filepond.min.css";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+import { ImageUpload } from "@/components/ImageUpload";
 
+// Регистрируем FilePond плагины только для видео
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 interface FormFieldProps {
@@ -129,8 +131,20 @@ export const CustomFormField: React.FC<FormFieldProps> = ({
           </div>
         );
       case "file":
-        const ACCEPTED_VIDEO_TYPES = ["video/mp4", "video/webm", "video/ogg"];
-        const acceptedFileTypes = accept ? [accept] : ACCEPTED_VIDEO_TYPES;
+        // Для изображений используем красивый ImageUpload компонент
+        if (accept?.includes("image")) {
+          return (
+            <ImageUpload
+              value={field.value || null}
+              onChange={field.onChange}
+              className={inputClassName}
+            />
+          );
+        }
+        
+        // Для видео используем FilePond
+        const DEFAULT_VIDEO_TYPES = ["video/mp4", "video/webm", "video/ogg"];
+        const acceptedFileTypes = accept ? [accept] : DEFAULT_VIDEO_TYPES;
 
         return (
           <FilePond
@@ -145,8 +159,11 @@ export const CustomFormField: React.FC<FormFieldProps> = ({
               );
             }}
             acceptedFileTypes={acceptedFileTypes}
-            labelIdle={`Drag & Drop your files or <span class="filepond--label-action">Browse</span>`}
+            labelIdle={`Drag & Drop your video files or <span class="filepond--label-action">Browse</span>`}
             credits={false}
+            maxFileSize="50MB"
+            allowFileSizeValidation={true}
+            allowFileTypeValidation={true}
           />
         );
       case "number":
