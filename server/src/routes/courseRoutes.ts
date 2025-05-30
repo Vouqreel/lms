@@ -7,7 +7,6 @@ import {
   listCourses,
   updateCourse,
   getUploadVideoUrl,
-  getUploadImageUrl,
 } from "../controllers/courseController";
 import { requireAuth } from "@clerk/express";
 
@@ -16,9 +15,6 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 router.get("/", listCourses);
 router.post("/", requireAuth(), createCourse);
-
-// Image upload route MUST be before /:courseId to avoid conflicts
-router.post("/get-upload-image-url", requireAuth(), getUploadImageUrl);
 
 router.get("/:courseId", getCourse);
 router.put("/:courseId", requireAuth(), upload.single("image"), updateCourse);

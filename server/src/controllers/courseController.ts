@@ -151,7 +151,23 @@ export const getUploadVideoUrl = async (req: Request, res: Response): Promise<vo
 
 	try {
 		const uniqueId = uuidv4();
-		const s3Key = `videos/${uniqueId}/${fileName}`;
+		
+		// Определяем тип файла и папку
+		let s3Key: string;
+		let cdnPath: string;
+		
+		if (fileType.startsWith('image/')) {
+			// Для изображений
+			s3Key = `course-images/${uniqueId}/${fileName}`;
+			cdnPath = `course-images/${uniqueId}/${fileName}`;
+		} else if (fileType === 'video/mp4') {
+			// Для видео
+			s3Key = `videos/${uniqueId}/${fileName}`;
+			cdnPath = `videos/${uniqueId}/${fileName}`;
+		} else {
+			res.status(400).json({ message: "Поддерживаются только видео (MP4) и изображения" });
+			return;
+		}
 
 		const s3Params = {
 			Bucket: process.env.S3_BUCKET_NAME || "",
@@ -161,50 +177,21 @@ export const getUploadVideoUrl = async (req: Request, res: Response): Promise<vo
 		};
 
 		const uploadUrl = s3.getSignedUrl("putObject", s3Params);
-		const videoUrl = `${process.env.CLOUDFRONT_DOMAIN}/videos/${uniqueId}/${fileName}`;
+		const finalUrl = `${process.env.CLOUDFRONT_DOMAIN}/${cdnPath}`;
 
-		res.json({
-			message: "URL для загрузки успешно сгенерирован",
-			data: { uploadUrl, videoUrl },
-		});
+		// Возвращаем разные поля в зависимости от типа файла
+		if (fileType.startsWith('image/')) {
+			res.json({
+				message: "URL для загрузки изображения успешно сгенерирован",
+				data: { uploadUrl, imageUrl: finalUrl },
+			});
+		} else {
+			res.json({
+				message: "URL для загрузки успешно сгенерирован",
+				data: { uploadUrl, videoUrl: finalUrl },
+			});
+		}
 	} catch (error) {
 		res.status(500).json({ message: "Ошибка при генерации URL для загрузки", error });
-	}
-};
-
-export const getUploadImageUrl = async (req: Request, res: Response): Promise<void> => {
-	const { fileName, fileType } = req.body;
-
-	if (!fileName || !fileType) {
-		res.status(400).json({ message: "Имя файла и тип обязательны" });
-		return;
-	}
-
-	// Проверяем, что это изображение
-	if (!fileType.startsWith('image/')) {
-		res.status(400).json({ message: "Можно загружать только изображения" });
-		return;
-	}
-
-	try {
-		const uniqueId = uuidv4();
-		const s3Key = `course-images/${uniqueId}/${fileName}`;
-
-		const s3Params = {
-			Bucket: process.env.S3_BUCKET_NAME || "",
-			Key: s3Key,
-			Expires: 60,
-			ContentType: fileType,
-		};
-
-		const uploadUrl = s3.getSignedUrl("putObject", s3Params);
-		const imageUrl = `${process.env.CLOUDFRONT_DOMAIN}/course-images/${uniqueId}/${fileName}`;
-
-		res.json({
-			message: "URL для загрузки изображения успешно сгенерирован",
-			data: { uploadUrl, imageUrl },
-		});
-	} catch (error) {
-		res.status(500).json({ message: "Ошибка при генерации URL для загрузки изображения", error });
 	}
 };

@@ -11,7 +11,6 @@ import {
 	useGetCourseQuery,
 	useUpdateCourseMutation,
 	useGetUploadVideoUrlMutation,
-	useGetUploadImageUrlMutation,
 } from "@/state/api";
 import { useAppDispatch, useAppSelector } from "@/state/redux";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,7 +29,6 @@ const CourseEditor = () => {
 	const { data: course, isLoading, refetch } = useGetCourseQuery(id);
 	const [updateCourse] = useUpdateCourseMutation();
 	const [getUploadVideoUrl] = useGetUploadVideoUrlMutation();
-	const [getUploadImageUrl] = useGetUploadImageUrlMutation();
 
 	const dispatch = useAppDispatch();
 	const { sections } = useAppSelector((state) => state.global.courseEditor);
@@ -69,7 +67,7 @@ const CourseEditor = () => {
 			let imageUrl = course?.image; // Keep existing image by default
 			if (data.courseImage instanceof File) {
 				try {
-					imageUrl = await uploadCourseImage(data.courseImage, getUploadImageUrl);
+					imageUrl = await uploadCourseImage(data.courseImage, id, getUploadVideoUrl);
 				} catch (error) {
 					console.error("Failed to upload image:", error);
 					// Continue with existing image if upload fails

@@ -395,7 +395,8 @@ async function uploadVideo(
 
 export const uploadCourseImage = async (
   imageFile: File,
-  getUploadImageUrl: any
+  courseId: string,
+  getUploadVideoUrl: any
 ): Promise<string> => {
   // Validate file type
   const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
@@ -412,7 +413,11 @@ export const uploadCourseImage = async (
   }
 
   try {
-    const { uploadUrl, imageUrl } = await getUploadImageUrl({
+    // Use video upload API with dummy parameters for sections/chapters
+    const { uploadUrl, imageUrl } = await getUploadVideoUrl({
+      courseId,
+      sectionId: 'dummy', // Not used for images
+      chapterId: 'dummy', // Not used for images
       fileName: imageFile.name,
       fileType: imageFile.type,
     }).unwrap();
