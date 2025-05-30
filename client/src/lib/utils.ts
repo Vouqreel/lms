@@ -395,7 +395,6 @@ async function uploadVideo(
 
 export const uploadCourseImage = async (
   imageFile: File,
-  courseId: string,
   getUploadImageUrl: any
 ): Promise<string> => {
   // Validate file type
@@ -414,7 +413,6 @@ export const uploadCourseImage = async (
 
   try {
     const { uploadUrl, imageUrl } = await getUploadImageUrl({
-      courseId,
       fileName: imageFile.name,
       fileType: imageFile.type,
     }).unwrap();

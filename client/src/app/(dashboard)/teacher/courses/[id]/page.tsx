@@ -69,7 +69,7 @@ const CourseEditor = () => {
 			let imageUrl = course?.image; // Keep existing image by default
 			if (data.courseImage instanceof File) {
 				try {
-					imageUrl = await uploadCourseImage(data.courseImage, id, getUploadImageUrl);
+					imageUrl = await uploadCourseImage(data.courseImage, getUploadImageUrl);
 				} catch (error) {
 					console.error("Failed to upload image:", error);
 					// Continue with existing image if upload fails
