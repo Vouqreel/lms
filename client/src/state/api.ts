@@ -155,10 +155,10 @@ export const api = createApi({
 
     getUploadImageUrl: build.mutation<
       { uploadUrl: string; imageUrl: string },
-      { fileName: string; fileType: string }
+      { courseId: string; fileName: string; fileType: string }
     >({
-      query: ({ fileName, fileType }) => ({
-        url: `courses/get-upload-image-url`,
+      query: ({ courseId, fileName, fileType }) => ({
+        url: `courses/${courseId}/get-upload-image-url`,
         method: "POST",
         body: { fileName, fileType },
       }),

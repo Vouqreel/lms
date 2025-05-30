@@ -27,6 +27,6 @@ router.post(
   getUploadVideoUrl
 );
 
-router.post("/get-upload-image-url", requireAuth(), getUploadImageUrl);
+router.post("/:courseId/get-upload-image-url", requireAuth(), getUploadImageUrl);
 
 export default router;
