@@ -69,9 +69,6 @@ export const updateCourse = async (req: Request, res: Response): Promise<void> =
 	const { courseId } = req.params;
 	const updateData = { ...req.body };
 	const { userId } = getAuth(req);
-	
-	console.log('Updating course:', courseId);
-	console.log('Update data received:', updateData);
 
 	try {
 		const course = await Course.get(courseId);
@@ -112,14 +109,7 @@ export const updateCourse = async (req: Request, res: Response): Promise<void> =
 		}
 
 		Object.assign(course, updateData);
-		console.log('Course before save:', {
-			id: course.courseId,
-			title: course.title,
-			image: course.image
-		});
-		
 		await course.save();
-		console.log('Course saved successfully with image:', course.image);
 
 		res.json({ message: "Курс успешно обновлен", data: course });
 	} catch (error) {
@@ -153,7 +143,6 @@ export const deleteCourse = async (req: Request, res: Response): Promise<void> =
 
 export const getUploadVideoUrl = async (req: Request, res: Response): Promise<void> => {
 	const { fileName, fileType } = req.body;
-	console.log('Upload request received:', { fileName, fileType });
 
 	if (!fileName || !fileType) {
 		res.status(400).json({ message: "Имя файла и тип обязательны" });
@@ -168,23 +157,17 @@ export const getUploadVideoUrl = async (req: Request, res: Response): Promise<vo
 		let cdnPath: string;
 		
 		if (fileType.startsWith('image/')) {
-			console.log('Detected image file type');
 			// Для изображений
 			s3Key = `course-images/${uniqueId}/${fileName}`;
 			cdnPath = `course-images/${uniqueId}/${fileName}`;
 		} else if (fileType === 'video/mp4') {
-			console.log('Detected video file type');
 			// Для видео
 			s3Key = `videos/${uniqueId}/${fileName}`;
 			cdnPath = `videos/${uniqueId}/${fileName}`;
 		} else {
-			console.log('Unsupported file type:', fileType);
 			res.status(400).json({ message: "Поддерживаются только видео (MP4) и изображения" });
 			return;
 		}
-
-		console.log('S3 Key:', s3Key);
-		console.log('CDN Path:', cdnPath);
 
 		const s3Params = {
 			Bucket: process.env.S3_BUCKET_NAME || "",
@@ -198,19 +181,15 @@ export const getUploadVideoUrl = async (req: Request, res: Response): Promise<vo
 
 		// Возвращаем разные поля в зависимости от типа файла
 		if (fileType.startsWith('image/')) {
-			const response = {
+			res.json({
 				message: "URL для загрузки изображения успешно сгенерирован",
 				data: { uploadUrl, imageUrl: finalUrl },
-			};
-			console.log('Returning image response:', response);
-			res.json(response);
+			});
 		} else {
-			const response = {
+			res.json({
 				message: "URL для загрузки успешно сгенерирован",
 				data: { uploadUrl, videoUrl: finalUrl },
-			};
-			console.log('Returning video response:', response);
-			res.json(response);
+			});
 		}
 	} catch (error) {
 		res.status(500).json({ message: "Ошибка при генерации URL для загрузки", error });
