@@ -60,14 +60,22 @@ const CourseEditor = () => {
 	}, [course, methods]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const onSubmit = async (data: CourseFormData) => {
+		console.log('=== FORM SUBMIT STARTED ===');
+		console.log('Form data:', data);
+		console.log('Has image file:', data.courseImage instanceof File);
+		
 		try {
 			const updatedSections = await uploadAllVideos(sections, id, getUploadVideoUrl);
 
 			// Handle image upload if a new image was selected
 			let imageUrl = course?.image; // Keep existing image by default
+			console.log('Current course image:', imageUrl);
+			
 			if (data.courseImage instanceof File) {
+				console.log('New image file selected:', data.courseImage.name);
 				try {
 					imageUrl = await uploadCourseImage(data.courseImage, id, getUploadVideoUrl);
+					console.log('Image uploaded successfully. New imageUrl:', imageUrl);
 				} catch (error) {
 					console.error("Failed to upload image:", error);
 					// Continue with existing image if upload fails
@@ -76,6 +84,11 @@ const CourseEditor = () => {
 			}
 
 			const formData = createCourseFormData(data, updatedSections, imageUrl || undefined);
+			console.log('Final imageUrl being sent to server:', imageUrl);
+			console.log('FormData entries:');
+			for (let [key, value] of formData.entries()) {
+				console.log(key + ':', value);
+			}
 
 			await updateCourse({
 				courseId: id,
@@ -181,6 +194,24 @@ const CourseEditor = () => {
 									accept="image/*"
 									placeholder="Выберите изображение для курса"
 								/>
+								
+								{/* Показываем текущее изображение курса */}
+								{course?.image && (
+									<div className="mt-2">
+										<p className="text-sm text-customgreys-dirtyGrey mb-2">Текущее изображение:</p>
+										<img 
+											src={course.image} 
+											alt="Текущее изображение курса" 
+											className="w-32 h-32 object-cover rounded-lg border border-customgreys-dirtyGrey"
+											onError={(e) => {
+												console.log('Error loading current course image:', course.image);
+												e.currentTarget.style.display = 'none';
+											}}
+											onLoad={() => console.log('Current course image loaded successfully:', course.image)}
+										/>
+										<p className="text-xs text-customgreys-dirtyGrey mt-1">{course.image}</p>
+									</div>
+								)}
 							</div>
 						</div>
 

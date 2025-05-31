@@ -414,13 +414,30 @@ export const uploadCourseImage = async (
 
   try {
     // Use video upload API with dummy parameters for sections/chapters
-    const { uploadUrl, imageUrl } = await getUploadVideoUrl({
+    console.log('Uploading image with params:', {
+      courseId,
+      sectionId: 'dummy',
+      chapterId: 'dummy', 
+      fileName: imageFile.name,
+      fileType: imageFile.type
+    });
+    
+    const response = await getUploadVideoUrl({
       courseId,
       sectionId: 'dummy', // Not used for images
       chapterId: 'dummy', // Not used for images
       fileName: imageFile.name,
       fileType: imageFile.type,
     }).unwrap();
+    
+    console.log('API Response:', response);
+    
+    // Check if we have imageUrl or videoUrl
+    const uploadUrl = response.uploadUrl;
+    const finalImageUrl = response.imageUrl || response.videoUrl;
+    
+    console.log('Upload URL:', uploadUrl);
+    console.log('Final Image URL:', finalImageUrl);
 
     const uploadResponse = await fetch(uploadUrl, {
       method: "PUT",
@@ -434,7 +451,8 @@ export const uploadCourseImage = async (
       throw new Error(`Upload failed with status: ${uploadResponse.status}`);
     }
     
-    return imageUrl;
+    console.log('Image uploaded successfully. Final URL:', finalImageUrl);
+    return finalImageUrl;
   } catch (error) {
     console.error("Failed to upload course image:", error);
     toast.error("Ошибка при загрузке изображения");
