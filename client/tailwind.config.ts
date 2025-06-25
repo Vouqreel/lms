@@ -53,11 +53,23 @@ const config = {
           ring: "hsl(var(--sidebar-ring))",
         },
         customgreys: {
-          primarybg: "#1B1C22",
-          secondarybg: "#25262F",
-          darkGrey: "#17181D",
-          darkerGrey: "#3d3d3d",
-          dirtyGrey: "#6e6e6e",
+          primarybg: "#f8f9fa",
+          secondarybg: "#ffffff", 
+          darkGrey: "#e9ecef",
+          darkerGrey: "#dee2e6",
+          dirtyGrey: "#6c757d",
+        },
+        softblue: {
+          "50": "#f0f9ff",
+          "100": "#e0f2fe",
+          "200": "#bae6fd",
+          "300": "#7dd3fc",
+          "400": "#38bdf8",
+          "500": "#0ea5e9",
+          "600": "#0284c7",
+          "700": "#0369a1",
+          "800": "#075985",
+          "900": "#0c4a6e",
         },
         primary: {
           "50": "#fdfdff",
@@ -91,8 +103,9 @@ const config = {
           foreground: "hsl(var(--secondary-foreground))",
         },
         white: {
-          "50": "#d2d2d2",
-          "100": "#ffffff",
+          "50": "#343a40",
+          "100": "#212529",
+          DEFAULT: "#ffffff",
         },
         tertiary: {
           "50": "#E9B306",
@@ -133,7 +146,8 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans: ["var(--font-dm-sans)"],
+        sans: ["Montserrat", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "Montserrat", "sans-serif"],
       },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],

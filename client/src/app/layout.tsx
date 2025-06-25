@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
 import { Suspense } from "react";
+import { ruClerkLocalization } from "@/localization";
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
   display: "swap",
-  variable: "--font-dm-sans",
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,15 +25,132 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={`${dmSans.className}`}>
+    <ClerkProvider localization={ruClerkLocalization}>
+      <html lang="ru">
+        <body className={`${montserrat.className} ${montserrat.variable}`}>
           <Providers>
             <Suspense fallback={null}>
               <div className="root-layout">{children}</div>
             </Suspense>
             <Toaster richColors closeButton />
           </Providers>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                // Перевод сообщений валидации Clerk
+                function translateClerkMessages() {
+                  const translations = {
+                    'Your password must contain 8 or more characters.': 'Ваш пароль должен содержать 8 или более символов.',
+                    'Your password meets all the necessary requirements.': 'Пароль соответствует всем необходимым требованиям.',
+                    'Passwords match.': 'Пароли совпадают.',
+                    'Passwords do not match.': 'Пароли не совпадают.',
+                    'Your password is not strong enough.': 'Ваш пароль недостаточно надежен.',
+                    'Password is too short': 'Пароль слишком короткий',
+                    'Password must be at least 8 characters': 'Пароль должен содержать минимум 8 символов'
+                  };
+                  
+                  function replaceText() {
+                    // Ищем все возможные элементы с текстом
+                    const selectors = [
+                      '.cl-formFieldErrorText',
+                      '.cl-formFieldInfoText', 
+                      '.cl-formFieldHintText',
+                      '[class*="formField"][class*="Text"]',
+                      '[class*="cl-"][class*="Text"]',
+                      'p[class*="cl-"]'
+                    ];
+                    
+                    selectors.forEach(selector => {
+                      const elements = document.querySelectorAll(selector);
+                      elements.forEach(el => {
+                        if (el.textContent) {
+                          let text = el.textContent.trim();
+                          // Проверяем точные совпадения
+                          if (translations[text]) {
+                            el.textContent = translations[text];
+                          } else {
+                            // Проверяем частичные совпадения
+                            Object.keys(translations).forEach(key => {
+                              if (text.includes(key)) {
+                                el.textContent = text.replace(key, translations[key]);
+                              }
+                            });
+                          }
+                        }
+                      });
+                    });
+                    
+                    // Также проверяем все текстовые узлы
+                    const walker = document.createTreeWalker(
+                      document.body,
+                      NodeFilter.SHOW_TEXT,
+                      {
+                        acceptNode: function(node) {
+                          // Проверяем только текстовые узлы внутри Clerk элементов
+                          const parent = node.parentElement;
+                          if (parent && parent.className && parent.className.includes('cl-')) {
+                            return NodeFilter.FILTER_ACCEPT;
+                          }
+                          return NodeFilter.FILTER_REJECT;
+                        }
+                      }
+                    );
+                    
+                    let textNode;
+                    while (textNode = walker.nextNode()) {
+                      const text = textNode.textContent.trim();
+                      if (text && translations[text]) {
+                        textNode.textContent = translations[text];
+                      }
+                    }
+                  }
+                  
+                  // Запускаем сразу и при изменениях DOM
+                  replaceText();
+                  
+                  // Более агрессивный observer
+                  const observer = new MutationObserver((mutations) => {
+                    let shouldReplace = false;
+                    mutations.forEach(mutation => {
+                      if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                        shouldReplace = true;
+                      }
+                    });
+                    if (shouldReplace) {
+                      setTimeout(replaceText, 10); // Небольшая задержка
+                    }
+                  });
+                  
+                  observer.observe(document.body, {
+                    childList: true,
+                    subtree: true,
+                    characterData: true,
+                    attributes: true,
+                    attributeFilter: ['class']
+                  });
+                  
+                  // Также запускаем периодически
+                  setInterval(replaceText, 500);
+                }
+                
+                // Запускаем после загрузки DOM
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', translateClerkMessages);
+                } else {
+                  translateClerkMessages();
+                }
+                
+                // Запускаем при изменении URL (для SPA)
+                let currentUrl = location.href;
+                new MutationObserver(() => {
+                  if (location.href !== currentUrl) {
+                    currentUrl = location.href;
+                    setTimeout(translateClerkMessages, 100);
+                  }
+                }).observe(document, {subtree: true, childList: true});
+              `,
+            }}
+          />
         </body>
       </html>
     </ClerkProvider>

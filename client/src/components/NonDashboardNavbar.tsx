@@ -17,7 +17,7 @@ const NonDashboardNavbar = () => {
 			<div className="nondashboard-navbar__container">
 				<div className="nondashboard-navbar__search">
 					<Link href="/" className="nondashboard-navbar__brand" scroll={false}>
-						VazeByte
+						ВейзЛаб
 					</Link>
 					<div className="flex items-center gap-4">
 						<div className="relative group">
@@ -30,11 +30,6 @@ const NonDashboardNavbar = () => {
 					</div>
 				</div>
 				<div className="nondashboard-navbar__actions">
-					<button className="nondashboard-navbar__notification-button">
-						<span className="nondashboard-navbar__notification-indicator"></span>
-						<Bell className="nondashboard-navbar__notification-icon" />
-					</button>
-
 					<SignedIn>
 						<UserButton
 							appearance={{

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -17,8 +17,32 @@ body,
 	height: 100%;
 	width: 100%;
 	@apply text-sm;
-	@apply text-gray-300;
+	@apply text-gray-700;
 	@apply bg-customgreys-primarybg;
+	font-family: "Montserrat", sans-serif;
+}
+
+/* Принудительное применение Montserrat */
+* {
+	font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Global Light Theme Overrides */
+.hover\:underline:hover {
+	color: #1f2937 !important;
+}
+
+.text-muted-foreground {
+	color: #6b7280 !important;
+}
+
+.hover\:bg-sidebar-accent:hover {
+	background-color: #e0f2fe !important;
+	color: #075985 !important;
+}
+
+.hover\:text-sidebar-accent-foreground:hover {
+	color: #075985 !important;
 }
 
 :root {
@@ -37,13 +61,13 @@ input[type="color"] {
 
 @layer base {
 	:root {
-		--sidebar-background: theme("colors.customgreys.primarybg");
-		--sidebar-foreground: theme("colors.white.50");
+		--sidebar-background: theme("colors.softblue.50");
+		--sidebar-foreground: theme("colors.gray.800");
 		--sidebar-primary: theme("colors.primary.700");
-		--sidebar-primary-foreground: theme("colors.white.50");
-		--sidebar-accent: theme("colors.customgreys.darkerGrey");
-		--sidebar-accent-foreground: theme("colors.customgreys.dirtyGrey");
-		--sidebar-border: theme("colors.customgreys.secondarybg");
+		--sidebar-primary-foreground: theme("colors.white.100");
+		--sidebar-accent: theme("colors.softblue.100");
+		--sidebar-accent-foreground: theme("colors.softblue.800");
+		--sidebar-border: theme("colors.softblue.200");
 		--sidebar-ring: theme("colors.primary.700");
 		--popover: theme("colors.customgreys.primarybg");
 		--popover-foreground: theme("colors.white.50");
@@ -52,29 +76,29 @@ input[type="color"] {
 		--foreground: theme("colors.white.50");
 
 		--primary: theme("colors.primary.700");
-		--primary-foreground: theme("colors.white.50");
+		--primary-foreground: theme("colors.white.100");
 
 		--muted: theme("colors.primary.600");
 		--muted-foreground: theme("colors.customgreys.dirtyGrey");
 
 		--accent: theme("colors.primary.600");
-		--accent-foreground: theme("colors.white.50");
+		--accent-foreground: theme("colors.white.100");
 
-		--border: theme("colors.customgreys.secondarybg");
+		--border: theme("colors.customgreys.darkGrey");
 		--ring: theme("colors.primary.700");
 
-		--card: theme("colors.customgreys.primarybg");
+		--card: theme("colors.customgreys.secondarybg");
 		--card-foreground: theme("colors.white.50");
 	}
 
 	.dark {
-		--sidebar-background: theme("colors.customgreys.primarybg");
-		--sidebar-foreground: theme("colors.white.50");
+		--sidebar-background: theme("colors.softblue.50");
+		--sidebar-foreground: theme("colors.gray.800");
 		--sidebar-primary: theme("colors.primary.700");
-		--sidebar-primary-foreground: theme("colors.white.50");
-		--sidebar-accent: theme("colors.customgreys.darkerGrey");
-		--sidebar-accent-foreground: theme("colors.customgreys.dirtyGrey");
-		--sidebar-border: theme("colors.customgreys.secondarybg");
+		--sidebar-primary-foreground: theme("colors.white.100");
+		--sidebar-accent: theme("colors.softblue.100");
+		--sidebar-accent-foreground: theme("colors.softblue.800");
+		--sidebar-border: theme("colors.softblue.200");
 		--sidebar-ring: theme("colors.primary.700");
 		--popover: theme("colors.customgreys.primarybg");
 		--popover-foreground: theme("colors.white.50");
@@ -83,18 +107,18 @@ input[type="color"] {
 		--foreground: theme("colors.white.50");
 
 		--primary: theme("colors.primary.700");
-		--primary-foreground: theme("colors.white.50");
+		--primary-foreground: theme("colors.white.100");
 
 		--muted: theme("colors.primary.600");
 		--muted-foreground: theme("colors.customgreys.dirtyGrey");
 
 		--accent: theme("colors.primary.600");
-		--accent-foreground: theme("colors.white.50");
+		--accent-foreground: theme("colors.white.100");
 
-		--border: theme("colors.customgreys.secondarybg");
+		--border: theme("colors.customgreys.darkGrey");
 		--ring: theme("colors.primary.700");
 
-		--card: theme("colors.customgreys.primarybg");
+		--card: theme("colors.customgreys.secondarybg");
 		--card-foreground: theme("colors.white.50");
 	}
 }
@@ -103,9 +127,480 @@ input[type="color"] {
 	@apply bg-customgreys-primarybg;
 }
 
-/* Filepond */
+/* Clerk Components Light Theme */
+.cl-userButtonPopoverCard,
+.cl-popoverBox,
+.cl-userButton-popover {
+	background-color: #ffffff !important;
+	border: 1px solid #e5e7eb !important;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1) !important;
+}
+
+.cl-userButtonPopoverMain,
+.cl-userButtonPopoverActions,
+.cl-userButtonPopoverFooter {
+	background-color: #ffffff !important;
+	color: #374151 !important;
+}
+
+.cl-userButtonPopoverActionButton {
+	color: #374151 !important;
+	background-color: transparent !important;
+}
+
+.cl-userButtonPopoverActionButton:hover {
+	background-color: #f3f4f6 !important;
+	color: #1f2937 !important;
+}
+
+.cl-userPreviewMainIdentifierText,
+.cl-userPreviewSecondaryIdentifier {
+	color: #374151 !important;
+}
+
+/* Clerk Profile Pages - Complete Override */
+.cl-rootBox,
+.cl-userProfile-root,
+.cl-cardBox,
+.cl-navbar,
+.cl-profilePage,
+.cl-profileSection,
+.cl-profileSectionContent,
+.cl-scrollBox,
+.cl-pageScrollBox,
+.cl-page,
+.cl-header,
+.cl-footer {
+	background-color: #ffffff !important;
+	color: #374151 !important;
+}
+
+/* Dark scroll box override */
+.cl-scrollBox.bg-customgreys-darkGrey {
+	background-color: #f9fafb !important;
+}
+
+/* Navbar buttons */
+.cl-navbarButton {
+	color: #6b7280 !important;
+	background-color: transparent !important;
+	border-radius: 8px !important;
+	padding: 12px 16px !important;
+	margin: 4px !important;
+}
+
+.cl-navbarButton.cl-active,
+.cl-navbarButton[data-active="true"] {
+	color: #1d4ed8 !important;
+	background-color: #dbeafe !important;
+	font-weight: 600 !important;
+}
+
+.cl-navbarButton:hover {
+	color: #374151 !important;
+	background-color: #f3f4f6 !important;
+}
+
+.cl-navbarButtonIcon {
+	color: inherit !important;
+}
+
+/* Headers and titles */
+.cl-profileSectionTitleText,
+.cl-headerTitle,
+.cl-internal-2plp4x,
+.cl-internal-10mwlbn,
+.cl-internal-1y71s3o {
+	color: #1f2937 !important;
+	font-weight: 600 !important;
+}
+
+/* Profile section items */
+.cl-profileSectionItem {
+	background-color: #f9fafb !important;
+	border: 1px solid #e5e7eb !important;
+	border-radius: 12px !important;
+	padding: 20px !important;
+	margin: 8px 0 !important;
+}
+
+/* Primary buttons */
+.cl-profileSectionPrimaryButton {
+	color: #3b82f6 !important;
+	background-color: #f0f9ff !important;
+	border: 1px solid #93c5fd !important;
+	border-radius: 8px !important;
+	padding: 10px 16px !important;
+	font-weight: 500 !important;
+	transition: all 0.2s ease !important;
+}
+
+.cl-profileSectionPrimaryButton:hover {
+	background-color: #dbeafe !important;
+	color: #1d4ed8 !important;
+	border-color: #60a5fa !important;
+	transform: translateY(-1px) !important;
+	box-shadow: 0 4px 8px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Danger buttons */
+.cl-profileSectionPrimaryButton__danger,
+.cl-button__danger {
+	color: #dc2626 !important;
+	background-color: #fef2f2 !important;
+	border: 1px solid #fca5a5 !important;
+}
+
+.cl-profileSectionPrimaryButton__danger:hover,
+.cl-button__danger:hover {
+	background-color: #fee2e2 !important;
+	color: #b91c1c !important;
+	border-color: #f87171 !important;
+}
+
+/* Menu buttons */
+.cl-menuButtonEllipsis,
+.cl-menuButton {
+	color: #6b7280 !important;
+	background-color: transparent !important;
+	border-radius: 6px !important;
+	padding: 8px !important;
+}
+
+.cl-menuButtonEllipsis:hover,
+.cl-menuButton:hover {
+	background-color: #f3f4f6 !important;
+	color: #374151 !important;
+}
+
+/* Text elements */
+.cl-internal-rvg68x,
+.cl-internal-1f75kyp,
+.cl-internal-5d9djf,
+.cl-internal-1r4wkk6 {
+	color: #374151 !important;
+}
+
+/* Badge elements */
+.cl-badge {
+	background-color: #dbeafe !important;
+	color: #1d4ed8 !important;
+	border-radius: 12px !important;
+	padding: 4px 8px !important;
+	font-size: 12px !important;
+	font-weight: 500 !important;
+}
+
+/* Footer */
+.cl-footer,
+.cl-internal-sfd6or {
+	background-color: #f9fafb !important;
+	border-top: 1px solid #e5e7eb !important;
+	color: #6b7280 !important;
+}
+
+/* Mobile menu */
+.cl-navbarMobileMenuButton {
+	color: #374151 !important;
+	background-color: #f9fafb !important;
+	border: 1px solid #e5e7eb !important;
+	border-radius: 8px !important;
+}
+
+/* Additional overrides for any remaining dark elements */
+[class*="cl-"] {
+	color: #374151 !important;
+}
+
+[class*="cl-"][class*="bg-"] {
+	background-color: #ffffff !important;
+}
+
+/* Specific internal classes that might still be dark */
+.cl-internal-1pr5xvn,
+.cl-internal-1agciv4,
+.cl-internal-1mm78hd,
+.cl-internal-13u79ez,
+.cl-internal-1dauvpw {
+	background-color: #ffffff !important;
+	color: #374151 !important;
+}
+
+/* Fix gradient and styling issues */
+.cl-internal-9gwwfg {
+	background: #ffffff !important;
+	color: #374151 !important;
+	border-right: 1px solid #e5e7eb !important;
+}
+
+.cl-internal-145rg42 {
+	align-items: center !important;
+	gap: 0.5rem !important;
+}
+
+/* Clerk Forms and Action Cards */
+.cl-actionCard,
+.cl-formContainer,
+.cl-form,
+.cl-internal-ntimp3,
+.cl-internal-lbdj2s,
+.cl-internal-1df5v2y {
+	background-color: #ffffff !important;
+	color: #374151 !important;
+}
+
+/* Form Fields */
+.cl-formField,
+.cl-formFieldRow {
+	background-color: #f9fafb !important;
+	color: #374151 !important;
+	border: none !important;
+}
+
+.cl-formFieldInput,
+.cl-input {
+	background-color: #f9fafb !important;
+	color: #374151 !important;
+	border: 1px solid #d1d5db !important;
+	border-radius: 6px !important;
+}
+
+.cl-formFieldInput:focus,
+.cl-input:focus {
+	border-color: #3b82f6 !important;
+	outline: none !important;
+}
+
+/* Form Labels */
+.cl-formFieldLabel,
+.cl-formFieldRadioLabelTitle,
+.cl-formFieldRadioLabelDescription,
+.cl-internal-1sbbqks,
+.cl-internal-1y71s3o,
+.cl-internal-laksia,
+.cl-internal-1n79qt {
+	color: #374151 !important;
+}
+
+.cl-formFieldRadioLabelDescription,
+.cl-internal-laksia {
+	color: #6b7280 !important;
+}
+
+/* Header Subtitle */
+.cl-headerSubtitle,
+.cl-internal-r26unt {
+	color: #6b7280 !important;
+}
+
+/* Form Buttons */
+.cl-formButtonPrimary {
+	background-color: #3b82f6 !important;
+	color: #ffffff !important;
+	border: none !important;
+}
+
+.cl-formButtonPrimary:hover:not(:disabled) {
+	background-color: #2563eb !important;
+}
+
+.cl-formButtonPrimary:disabled {
+	background-color: #9ca3af !important;
+	cursor: not-allowed !important;
+	opacity: 0.6 !important;
+}
+
+.cl-formButtonReset {
+	background-color: transparent !important;
+	color: #6b7280 !important;
+	border: 1px solid #d1d5db !important;
+}
+
+.cl-formButtonReset:hover {
+	background-color: #f3f4f6 !important;
+	color: #374151 !important;
+}
+
+/* Avatar Upload Buttons */
+.cl-avatarImageActionsUpload {
+	background-color: #f0f9ff !important;
+	color: #3b82f6 !important;
+	border: 1px solid #93c5fd !important;
+}
+
+.cl-avatarImageActionsUpload:hover {
+	background-color: #dbeafe !important;
+	color: #1d4ed8 !important;
+}
+
+.cl-avatarImageActionsRemove {
+	background-color: #fef2f2 !important;
+	color: #dc2626 !important;
+	border: 1px solid #fca5a5 !important;
+}
+
+.cl-avatarImageActionsRemove:hover {
+	background-color: #fee2e2 !important;
+	color: #b91c1c !important;
+}
+
+/* Show Password Button */
+.cl-formFieldInputShowPasswordButton {
+	color: #6b7280 !important;
+	background-color: transparent !important;
+	border: none !important;
+}
+
+.cl-formFieldInputShowPasswordButton:hover {
+	color: #374151 !important;
+	background-color: #f3f4f6 !important;
+}
+
+/* Checkbox Styling */
+.cl-checkbox {
+	accent-color: #3b82f6 !important;
+	width: 18px !important;
+	height: 18px !important;
+	border: 2px solid #d1d5db !important;
+	border-radius: 4px !important;
+	background-color: #ffffff !important;
+	cursor: pointer !important;
+}
+
+.cl-checkbox:checked {
+	background-color: #3b82f6 !important;
+	border-color: #3b82f6 !important;
+	background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-7.5 7.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6 10.293l7.146-7.147a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e") !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: 12px !important;
+}
+
+/* Validation Messages */
+.cl-formFieldSuccessText,
+.cl-formFieldErrorText,
+.cl-formFieldInfoText {
+	color: #374151 !important;
+	font-size: 14px !important;
+	margin-top: 4px !important;
+}
+
+.cl-formFieldSuccessText {
+	color: #059669 !important;
+}
+
+.cl-formFieldErrorText {
+	color: #dc2626 !important;
+}
+
+/* CSS-хак для перевода английских валидационных сообщений */
+.cl-formFieldErrorText[id*="error"],
+.cl-formFieldInfoText[class*="newPassword"] {
+	color: #6b7280 !important;
+	font-size: 14px !important;
+}
+
+/* Скрыть иконку ошибки при валидации */
+.cl-formFieldErrorText svg,
+.cl-formFieldInfoText svg {
+	display: none !important;
+}
+
+/* Menu Lists and Items */
+.cl-menuList,
+.cl-internal-tgmq3e {
+	background-color: #ffffff !important;
+	border: 1px solid #e5e7eb !important;
+	border-radius: 8px !important;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05) !important;
+	padding: 8px !important;
+	min-width: 200px !important;
+}
+
+.cl-menuItem {
+	width: 100% !important;
+	text-align: left !important;
+	padding: 12px 16px !important;
+	border-radius: 6px !important;
+	margin: 2px 0 !important;
+	transition: all 0.2s ease !important;
+}
+
+/* Danger Menu Items - красные */
+.cl-menuItem[data-color="danger"],
+.cl-button[data-color="danger"] {
+	color: #dc2626 !important;
+	background-color: #fef2f2 !important;
+	border: 1px solid #fca5a5 !important;
+}
+
+.cl-menuItem[data-color="danger"]:hover,
+.cl-button[data-color="danger"]:hover {
+	color: #b91c1c !important;
+	background-color: #fee2e2 !important;
+	border-color: #f87171 !important;
+	transform: translateY(-1px) !important;
+	box-shadow: 0 4px 8px rgba(220, 38, 38, 0.15) !important;
+}
+
+/* Regular Menu Items */
+.cl-menuItem:not([data-color="danger"]) {
+	color: #374151 !important;
+	background-color: transparent !important;
+}
+
+.cl-menuItem:not([data-color="danger"]):hover {
+	color: #1f2937 !important;
+	background-color: #f3f4f6 !important;
+}
+
+/* Clerk UserButton Styling - УБРАНО */
+.cl-rootBox,
+.cl-userButton-root,
+.cl-internal-nfscg9 {
+	background-color: transparent !important;
+}
+
+.cl-userButtonTrigger,
+.cl-userButtonBox {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.cl-userButtonTrigger:hover .cl-userButtonBox {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+/* Clerk Footer/Branding - Скрыть полностью */
+.cl-internal-1hp5nqm,
+.cl-internal-piyvrh,
+.cl-internal-df7v37,
+.cl-internal-y44tp9,
+.cl-internal-16rjnjd {
+	display: none !important;
+}
+
+.cl-internal-wf8x4b {
+	color: #6b7280 !important;
+	font-size: 12px !important;
+}
+
+.cl-internal-1fcj7sw {
+	color: #6b7280 !important;
+}
+
+.cl-internal-1fcj7sw:hover {
+	color: #374151 !important;
+}
+
+.cl-internal-5ghyhf {
+	color: #6b7280 !important;
+}
 .filepond--panel-root {
-	@apply !bg-customgreys-primarybg;
+	@apply !bg-gray-50;
 }
 
 .filepond--drop-label.filepond--drop-label label {
@@ -113,10 +608,10 @@ input[type="color"] {
 }
 
 .filepond--drop-label {
-	@apply !text-white-50;
+	@apply !text-gray-700;
 	@apply cursor-pointer;
-	@apply hover:!bg-customgreys-darkerGrey;
-	@apply hover:!text-white-100;
+	@apply hover:!bg-gray-100;
+	@apply hover:!text-gray-900;
 }
 
 /* Component Classes */
@@ -221,130 +716,370 @@ input[type="color"] {
 	@apply mt-2 flex justify-center bg-secondary-700 rounded-lg px-4 py-2 hover:bg-secondary-600 cursor-pointer;
 }
 
-/* Landing Page */
+/* Landing Page Updated Styles */
+
+/* Landing Page Container */
 .landing {
-	@apply w-3/4;
+	@apply w-full bg-white;
 }
 
+/* Hero Section - Modern Design */
 .landing__hero {
-	@apply flex justify-between items-center mt-12 h-[500px] rounded-lg bg-customgreys-secondarybg;
+	@apply relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50;
 }
 
+/* Background pattern */
+.landing__hero-pattern {
+	@apply absolute inset-0 opacity-[0.03];
+	background-image: radial-gradient(circle at 20% 80%, #3b82f6 0, transparent 50%),
+		radial-gradient(circle at 80% 20%, #8b5cf6 0, transparent 50%),
+		radial-gradient(circle at 40% 40%, #06b6d4 0, transparent 50%);
+}
+
+/* Floating icons container */
+.landing__floating-icons {
+	@apply absolute inset-0 overflow-hidden pointer-events-none;
+}
+
+.landing__floating-icon {
+	@apply absolute opacity-0;
+}
+
+.landing__floating-icon--1 {
+	@apply top-[10%] left-[5%];
+}
+.landing__floating-icon--2 {
+	@apply top-[15%] right-[10%];
+}
+.landing__floating-icon--3 {
+	@apply top-[50%] left-[10%];
+}
+.landing__floating-icon--4 {
+	@apply top-[70%] right-[15%];
+}
+.landing__floating-icon--5 {
+	@apply bottom-[20%] left-[20%];
+}
+.landing__floating-icon--6 {
+	@apply bottom-[10%] right-[25%];
+}
+.landing__floating-icon--7 {
+	@apply top-[35%] right-[5%];
+}
+.landing__floating-icon--8 {
+	@apply bottom-[40%] left-[5%];
+}
+
+/* Hero content */
 .landing__hero-content {
-	@apply basis-1/2 px-16 mx-auto;
+	@apply relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto;
 }
 
 .landing__title {
-	@apply text-4xl font-bold mb-4;
+	@apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight;
+}
+
+.landing__title-highlight {
+	@apply text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 inline-block min-h-[1.2em];
 }
 
 .landing__description {
-	@apply text-lg text-gray-400 mb-8;
+	@apply text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed;
 }
 
+/* Feature badges */
+.landing__features {
+	@apply flex flex-wrap justify-center gap-3 mb-10;
+}
+
+.landing__feature {
+	@apply flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-sm border border-gray-100 text-sm text-gray-700 transform transition-all duration-300 hover:scale-105 hover:shadow-md;
+}
+
+/* CTA buttons */
 .landing__cta {
-	@apply w-fit;
+	@apply flex flex-col sm:flex-row gap-4 justify-center items-center;
 }
 
 .landing__cta-button {
-	@apply bg-primary-700 hover:bg-primary-600 px-4 py-2 rounded-md;
+	@apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
 }
 
-.landing__hero-images {
-	@apply basis-1/2 h-full relative overflow-hidden rounded-r-lg;
+.landing__cta-button--primary {
+	@apply bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700;
 }
 
-.landing__hero-image {
-	@apply object-cover transition-opacity duration-500 opacity-0;
+.landing__cta-button--secondary {
+	@apply bg-white text-gray-700 border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50;
 }
 
-.landing__hero-image--active {
-	@apply opacity-100;
+/* Stats Section */
+.landing__stats {
+	@apply py-20 bg-gradient-to-b from-white to-gray-50;
 }
 
+.landing__stats-grid {
+	@apply max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-4;
+}
+
+.landing__stat {
+	@apply text-center cursor-pointer;
+}
+
+.landing__stat-icon {
+	@apply text-blue-600 mb-4 flex justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3;
+}
+
+.landing__stat-number {
+	@apply text-3xl md:text-4xl font-bold text-gray-900 mb-2;
+}
+
+.landing__stat-label {
+	@apply text-gray-600 text-sm md:text-base;
+}
+
+/* Benefits Section */
+.landing__benefits {
+	@apply py-20 px-4 bg-white;
+}
+
+.landing__section-title {
+	@apply text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4;
+}
+
+.landing__section-description {
+	@apply text-lg md:text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12;
+}
+
+.landing__benefits-grid {
+	@apply max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.landing__benefit {
+	@apply bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100;
+}
+
+.landing__benefit-icon {
+	@apply mb-6 transform transition-all duration-300;
+}
+
+.landing__benefit:hover .landing__benefit-icon {
+	@apply scale-110 rotate-3;
+}
+
+.landing__benefit-title {
+	@apply text-xl font-semibold text-gray-900 mb-3;
+}
+
+.landing__benefit-description {
+	@apply text-gray-600 leading-relaxed;
+}
+
+/* Learning advantages */
+.landing__learning-advantages {
+	@apply mt-16 bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl max-w-4xl mx-auto;
+}
+
+.landing__advantages-title {
+	@apply text-2xl font-semibold text-gray-900 mb-6;
+}
+
+.landing__advantages-list {
+	@apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.landing__advantage-item {
+	@apply flex items-center gap-3 p-3 bg-white/70 backdrop-blur-sm rounded-lg;
+}
+
+/* Featured Courses */
 .landing__featured {
-	@apply mx-auto py-12 mt-10;
-}
-
-.landing__featured-title {
-	@apply text-2xl font-semibold mb-4;
-}
-
-.landing__featured-description {
-	@apply text-customgreys-dirtyGrey mb-8;
+	@apply py-20 px-4 bg-gradient-to-b from-gray-50 to-white;
 }
 
 .landing__tags {
-	@apply flex flex-wrap gap-4 mb-8;
+	@apply flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto;
 }
 
 .landing__tag {
-	@apply px-3 py-1 rounded-full text-sm;
+	@apply px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-gray-700 rounded-full text-sm font-medium hover:from-blue-200 hover:to-purple-200 transition-all duration-300 cursor-pointer;
 }
 
 .landing__courses {
-	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+	@apply max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
 }
 
-/* Landing Skeleton */
+/* FAQ Section */
+.landing__faq {
+	@apply py-20 px-4 bg-white;
+}
+
+.landing__faq-container {
+	@apply max-w-3xl mx-auto;
+}
+
+.landing__faq-accordion {
+	@apply space-y-4;
+}
+
+.landing__faq-item {
+	@apply border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-all duration-300;
+}
+
+.landing__faq-question {
+	@apply text-left text-gray-900 font-medium hover:text-blue-600 transition-colors duration-300 px-6 py-4;
+}
+
+.landing__faq-answer {
+	@apply text-gray-600 leading-relaxed px-6 pb-4;
+}
+
+/* Contact Section */
+.landing__contact {
+	@apply py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-purple-50;
+}
+
+.landing__contact-content {
+	@apply max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12;
+}
+
+.landing__contact-info {
+	@apply bg-white p-8 rounded-2xl shadow-lg;
+}
+
+.landing__contact-info-title {
+	@apply text-2xl font-bold text-gray-900 mb-6;
+}
+
+.landing__contact-items {
+	@apply space-y-4 mb-8;
+}
+
+.landing__contact-item {
+	@apply flex items-center gap-3 text-gray-600;
+}
+
+.landing__contact-hours {
+	@apply bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg;
+}
+
+.landing__contact-hours-title {
+	@apply font-semibold text-gray-900 mb-3;
+}
+
+.landing__contact-hours p {
+	@apply text-gray-600;
+}
+
+/* Contact Form */
+.landing__contact-form {
+	@apply bg-white p-8 rounded-2xl shadow-lg;
+}
+
+.landing__form-group {
+	@apply mb-6;
+}
+
+.landing__form-label {
+	@apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.landing__form-input {
+	@apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 outline-none;
+}
+
+.landing__form-textarea {
+	@apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 outline-none resize-none;
+}
+
+.landing__form-submit {
+	@apply w-full py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+}
+
+.landing__form-submit--success {
+	@apply from-green-600 to-green-700 hover:from-green-700 hover:to-green-800;
+}
+
+.landing__form-submit--error {
+	@apply from-red-600 to-red-700 hover:from-red-700 hover:to-red-800;
+}
+
+/* Animations */
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-20px) rotate(10deg);
+	}
+}
+
+@keyframes pulse-glow {
+	0%,
+	100% {
+		box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+	}
+	50% {
+		box-shadow: 0 0 40px rgba(139, 92, 246, 0.8);
+	}
+}
+
+/* Loading Skeleton */
 .landing-skeleton {
-	@apply w-3/4;
+	@apply w-full;
 }
 
 .landing-skeleton__hero {
-	@apply flex justify-between items-center mt-12 h-[500px] rounded-lg bg-customgreys-secondarybg;
+	@apply min-h-screen flex items-center justify-center bg-gray-100;
 }
 
 .landing-skeleton__hero-content {
-	@apply basis-1/2 px-16 mx-auto;
+	@apply text-center px-4;
 }
 
 .landing-skeleton__title {
-	@apply h-8 w-48 mb-4;
+	@apply h-16 w-96 bg-gray-300 rounded-lg mx-auto mb-6 animate-pulse;
 }
 
 .landing-skeleton__subtitle {
-	@apply h-4 w-96 mb-2;
+	@apply h-8 w-full max-w-2xl bg-gray-300 rounded-lg mx-auto mb-3 animate-pulse;
 }
 
 .landing-skeleton__subtitle-secondary {
-	@apply h-4 w-72 mb-8;
+	@apply h-8 w-full max-w-xl bg-gray-300 rounded-lg mx-auto mb-8 animate-pulse;
 }
 
 .landing-skeleton__button {
-	@apply w-40 h-10;
-}
-
-.landing-skeleton__hero-image {
-	@apply basis-1/2 h-full rounded-r-lg;
+	@apply w-48 h-12 bg-gray-300 rounded-full mx-auto animate-pulse;
 }
 
 .landing-skeleton__featured {
-	@apply mx-auto py-12 mt-10;
+	@apply py-20 px-4;
 }
 
 .landing-skeleton__featured-title {
-	@apply h-6 w-48 mb-4;
+	@apply h-10 w-64 bg-gray-300 rounded-lg mx-auto mb-4 animate-pulse;
 }
 
 .landing-skeleton__featured-description {
-	@apply h-4 w-full max-w-2xl mb-8;
+	@apply h-6 w-full max-w-2xl bg-gray-300 rounded-lg mx-auto mb-8 animate-pulse;
 }
 
 .landing-skeleton__tags {
-	@apply flex flex-wrap gap-4 mb-8;
+	@apply flex flex-wrap justify-center gap-3 mb-12;
 }
 
 .landing-skeleton__tag {
-	@apply w-24 h-6 rounded-full;
+	@apply w-24 h-8 bg-gray-300 rounded-full animate-pulse;
 }
 
 .landing-skeleton__courses {
-	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+	@apply max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
 }
 
 .landing-skeleton__course-card {
-	@apply h-[300px] rounded-lg;
+	@apply h-[300px] bg-gray-300 rounded-lg animate-pulse;
 }
 
 /* Checkout Details Page */
@@ -949,28 +1684,32 @@ input[type="color"] {
 
 /* Accordion Sections */
 .accordion-section {
-	@apply border-x border-b border-gray-600 overflow-hidden first:border-t first:rounded-t-lg last:rounded-b-lg;
+	@apply border-x border-b border-gray-300 overflow-hidden first:border-t first:rounded-t-lg last:rounded-b-lg;
 }
 
 .accordion-section__trigger {
-	@apply hover:bg-gray-700/50 bg-customgreys-primarybg/50 px-4 py-3;
+	@apply hover:bg-gray-50 bg-gray-100 px-4 py-3;
+}
+
+.accordion-section__trigger:hover {
+	color: #1f2937 !important;
 }
 
 .accordion-section__title {
-	@apply text-gray-400 font-medium;
+	@apply text-gray-700 font-medium;
 }
 
 .accordion-section__content {
-	@apply bg-customgreys-secondarybg/50 px-4 py-4;
+	@apply bg-gray-50 px-4 py-4;
 }
 
 .accordion-section__chapter {
-	@apply flex items-center text-gray-400/90 py-1;
+	@apply flex items-center text-gray-600 py-1;
 }
 
 /* Course Card */
 .course-card {
-	@apply flex flex-col w-full h-[340px] xl:h-[380px] border-none bg-customgreys-primarybg overflow-hidden cursor-pointer hover:bg-white-100/10 transition duration-200;
+	@apply flex flex-col w-full h-[340px] xl:h-[380px] border border-gray-200 bg-gray-50 overflow-hidden cursor-pointer hover:bg-gray-100 hover:shadow-lg transition duration-200;
 }
 
 .course-card__header {
@@ -986,7 +1725,7 @@ input[type="color"] {
 }
 
 .course-card__title {
-	@apply text-md lg:text-lg font-semibold line-clamp-2;
+	@apply text-md lg:text-lg font-semibold line-clamp-2 text-gray-900;
 }
 
 .course-card__footer {
@@ -994,7 +1733,7 @@ input[type="color"] {
 }
 
 .course-card__category {
-	@apply text-sm bg-customgreys-secondarybg rounded-full px-3 py-2 text-gray-400;
+	@apply text-sm bg-gray-100 rounded-full px-3 py-2 text-gray-600;
 }
 
 .course-card__price {
@@ -1003,7 +1742,7 @@ input[type="color"] {
 
 /* Course Card Search */
 .course-card-search {
-	@apply bg-customgreys-secondarybg overflow-hidden rounded-lg hover:bg-white-100/10 transition duration-200 flex flex-col cursor-pointer border-2 h-full;
+	@apply bg-gray-50 overflow-hidden rounded-lg hover:bg-gray-100 hover:shadow-lg transition duration-200 flex flex-col cursor-pointer border-2 h-full;
 }
 
 .course-card-search--selected {
@@ -1011,7 +1750,7 @@ input[type="color"] {
 }
 
 .course-card-search--unselected {
-	@apply border-transparent;
+	@apply border-gray-200;
 }
 
 .course-card-search__image-container {
@@ -1024,7 +1763,7 @@ input[type="color"] {
 
 /* Course Card Teacher */
 .course-card-teacher {
-	@apply w-full h-[400px] p-0 bg-background border-none text-foreground bg-customgreys-primarybg overflow-hidden hover:bg-white-100/10 transition duration-200 flex flex-col;
+	@apply w-full h-[400px] p-0 bg-gray-50 border border-gray-200 text-foreground overflow-hidden hover:bg-gray-100 hover:shadow-lg transition duration-200 flex flex-col;
 }
 
 .course-card-teacher__header {
@@ -1105,11 +1844,11 @@ input[type="color"] {
 }
 
 .navbar__search-input {
-	@apply bg-customgreys-primarybg pl-10 sm:pl-14 pr-6 sm:pr-20 py-3 sm:py-4 rounded-xl text-customgreys-dirtyGrey hover:text-white-50 hover:bg-customgreys-darkerGrey transition-all duration-300 text-sm sm:text-base;
+	@apply bg-gray-100 pl-10 sm:pl-14 pr-6 sm:pr-20 py-3 sm:py-4 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-200 transition-all duration-300 text-sm sm:text-base;
 }
 
 .navbar__search-icon {
-	@apply absolute left-3 sm:left-5 top-1/2 transform -translate-y-1/2 text-customgreys-dirtyGrey transition-all duration-300;
+	@apply absolute left-3 sm:left-5 top-1/2 transform -translate-y-1/2 text-gray-500 transition-all duration-300;
 }
 
 .navbar__actions {
@@ -1121,11 +1860,11 @@ input[type="color"] {
 }
 
 .navbar__dark-mode-icon {
-	@apply cursor-pointer text-customgreys-dirtyGrey w-5 h-5 sm:w-6 sm:h-6 hover:text-white-50;
+	@apply cursor-pointer text-gray-500 w-5 h-5 sm:w-6 sm:h-6 hover:text-gray-900;
 }
 
 .navbar__sidebar-trigger {
-	@apply text-customgreys-dirtyGrey hover:text-white-50 transition-colors;
+	@apply text-gray-500 hover:text-gray-900 transition-colors;
 }
 
 /* Toolbar */
@@ -1227,18 +1966,6 @@ input[type="color"] {
 	@apply flex items-center gap-2 sm:gap-4;
 }
 
-.nondashboard-navbar__notification-button {
-	@apply relative w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center;
-}
-
-.nondashboard-navbar__notification-indicator {
-	@apply absolute top-0 right-0 bg-blue-500 h-1.5 sm:h-2 w-1.5 sm:w-2 rounded-full;
-}
-
-.nondashboard-navbar__notification-icon {
-	@apply text-gray-400 w-4 h-4 sm:w-5 sm:h-5;
-}
-
 .nondashboard-navbar__auth-button--login {
 	@apply text-customgreys-dirtyGrey hover:bg-customgreys-darkerGrey hover:text-white-50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border-customgreys-dirtyGrey border-[1px] text-sm sm:text-base;
 }
@@ -1290,23 +2017,23 @@ input[type="color"] {
 
 /* Course Card Teacher Additional Classes */
 .course-card-teacher__content {
-	@apply w-full pb-6 pt-4 flex-grow flex flex-col justify-between text-gray-400;
+	@apply w-full pb-6 pt-4 flex-grow flex flex-col justify-between text-gray-700;
 }
 
 .course-card-teacher__title {
-	@apply text-primary-50 text-md md:text-lg line-clamp-2 overflow-hidden;
+	@apply text-gray-900 text-md md:text-lg line-clamp-2 overflow-hidden;
 }
 
 .course-card-teacher__category {
-	@apply bg-customgreys-dirtyGrey/50 px-2 py-1 mt-3 mb-3 rounded-xl w-fit text-sm;
+	@apply bg-gray-100 px-2 py-1 mt-3 mb-3 rounded-xl w-fit text-sm text-gray-600;
 }
 
 .course-card-teacher__edit-button {
-	@apply rounded w-full bg-primary-700 border-none hover:bg-primary-600 hover:text-customgreys-primarybg text-white-100 cursor-pointer;
+	@apply rounded w-full bg-primary-700 border-none hover:bg-primary-600 hover:text-white text-white cursor-pointer;
 }
 
 .course-card-teacher__delete-button {
-	@apply rounded w-full bg-red-600 text-white-100 hover:bg-red-400 hover:text-customgreys-primarybg cursor-pointer;
+	@apply rounded w-full bg-red-600 text-white hover:bg-red-500 hover:text-white cursor-pointer;
 }
 
 /* NonDashboard Navbar Additional Classes */
@@ -1341,15 +2068,15 @@ input[type="color"] {
 }
 
 .course-card-search__title {
-	@apply font-semibold line-clamp-1;
+	@apply font-semibold line-clamp-1 text-gray-900;
 }
 
 .course-card-search__description {
-	@apply text-sm mt-1 line-clamp-2;
+	@apply text-sm mt-1 line-clamp-2 text-gray-600;
 }
 
 .course-card-search__teacher {
-	@apply text-customgreys-dirtyGrey text-sm;
+	@apply text-gray-500 text-sm;
 }
 
 .course-card-search__footer {
@@ -1361,7 +2088,7 @@ input[type="color"] {
 }
 
 .course-card-search__enrollment {
-	@apply text-customgreys-dirtyGrey text-sm;
+	@apply text-gray-500 text-sm;
 }
 
 /* Additional Navbar Classes */
@@ -1404,7 +2131,7 @@ input[type="color"] {
 }
 
 .app-sidebar__collapse-icon {
-	@apply text-gray-400 w-5 h-5 group-data-[collapsible=icon]:hidden;
+	@apply text-gray-600 w-5 h-5 group-data-[collapsible=icon]:hidden;
 }
 
 .app-sidebar__nav-menu {
@@ -1412,11 +2139,11 @@ input[type="color"] {
 }
 
 .app-sidebar__nav-item {
-	@apply group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:py-4 hover:bg-customgreys-secondarybg;
+	@apply group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:py-4 hover:bg-softblue-100;
 }
 
 .app-sidebar__nav-button {
-	@apply gap-4 p-8 hover:bg-customgreys-secondarybg group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center;
+	@apply gap-4 p-8 hover:bg-softblue-100 group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center;
 }
 
 .app-sidebar__nav-link {
@@ -1424,11 +2151,11 @@ input[type="color"] {
 }
 
 .app-sidebar__nav-text {
-	@apply font-medium text-md ml-4 group-data-[collapsible=icon]:hidden;
+	@apply font-medium text-md ml-4 group-data-[collapsible=icon]:hidden text-gray-700;
 }
 
 .app-sidebar__active-indicator {
-	@apply absolute right-0 top-0 h-full w-[4px] bg-primary-750;
+	@apply absolute right-0 top-0 h-full w-[4px] bg-softblue-600;
 }
 
 .app-sidebar__signout {
@@ -1528,4 +2255,105 @@ input[type="color"] {
 
 .dashboard-navbar__sidebar-trigger {
 	@apply text-customgreys-dirtyGrey hover:text-white-50 transition-colors;
+}
+
+/* Обновленные стили для улучшенного Navbar */
+.dashboard-navbar {
+	@apply w-full mb-6 px-4 sm:px-8 pt-7 z-10 bg-gradient-to-r from-gray-50 to-blue-50/30;
+}
+
+.dashboard-navbar__container {
+	@apply flex justify-between items-center w-full my-3;
+}
+
+.dashboard-navbar__search {
+	@apply flex items-center w-full gap-4;
+}
+
+.dashboard-navbar__actions {
+	@apply flex items-center gap-4;
+}
+
+/* Красивая анимация для поиска */
+@keyframes searchPulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.02);
+	}
+}
+
+.dashboard-navbar__search .group:hover {
+	animation: searchPulse 2s ease-in-out infinite;
+}
+
+/* UserButton улучшения */
+.cl-userButtonTrigger {
+	transition: all 0.3s ease !important;
+}
+
+.cl-userButtonTrigger:hover {
+	transform: translateY(-1px) !important;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Скрыть овальный фон кнопки */
+.cl-userButtonTrigger {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+/* Убрать весь белый фон */
+.cl-userButtonBox,
+.cl-userButton-root,
+.cl-rootBox {
+	background: transparent !important;
+}
+
+/* Дополнительные фиксы для Clerk */
+.cl-internal-1hp5nqm,
+.cl-internal-piyvrh,
+.cl-internal-df7v37,
+.cl-internal-y44tp9,
+.cl-internal-16rjnjd,
+.cl-internal-1kqnuge,
+.cl-internal-2z8hkq,
+.cl-internal-1eekank,
+.cl-internal-1j7ahlv,
+.cl-internal-fhootk,
+.cl-internal-gpirto {
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+/* Улучшенный аватар */
+.cl-avatarImage {
+	border-radius: 50% !important;
+	transition: all 0.3s ease !important;
+}
+
+.cl-avatarImage:hover {
+	transform: scale(1.05) !important;
+	box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Убрать все белые фоны из Clerk */
+[class*="cl-"][style*="background"] {
+	background: transparent !important;
+}
+
+/* Navbar фоновый градиент */
+.dashboard-navbar {
+	background: linear-gradient(
+		135deg,
+		rgba(249, 250, 251, 0.8) 0%,
+		rgba(239, 246, 255, 0.6) 50%,
+		rgba(219, 234, 254, 0.4) 100%
+	) !important;
+	backdrop-filter: blur(10px) !important;
+	border-bottom: 1px solid rgba(229, 231, 235, 0.3) !important;
 }

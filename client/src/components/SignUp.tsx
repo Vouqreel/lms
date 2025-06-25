@@ -2,7 +2,6 @@
 
 import { SignUp, useUser } from "@clerk/nextjs";
 import React from "react";
-import { dark } from "@clerk/themes";
 import { useSearchParams } from "next/navigation";
 
 const SignUpComponent = () => {
@@ -30,22 +29,21 @@ const SignUpComponent = () => {
   return (
     <SignUp
       appearance={{
-        baseTheme: dark,
         elements: {
           rootBox: "flex justify-center items-center py-5",
           cardBox: "shadow-none",
-          card: "bg-customgreys-secondarybg w-full shadow-none",
+          card: "bg-white w-full shadow-lg border border-gray-200",
           footer: {
-            background: "#25262F",
+            background: "#ffffff",
             padding: "0rem 2.5rem",
             "& > div > div:nth-child(1)": {
-              background: "#25262F",
+              background: "#ffffff",
             },
           },
-          formFieldLabel: "text-white-50 font-normal",
+          formFieldLabel: "text-gray-700 font-normal",
           formButtonPrimary:
-            "bg-primary-700 text-white-100 hover:bg-primary-600 !shadow-none",
-          formFieldInput: "bg-customgreys-primarybg text-white-50 !shadow-none",
+            "bg-primary-700 text-white hover:bg-primary-600 !shadow-none",
+          formFieldInput: "bg-gray-50 text-gray-900 border border-gray-300 !shadow-none",
           footerActionLink: "text-primary-750 hover:text-primary-600",
         },
       }}

@@ -48,20 +48,16 @@ const AppSidebar = () => {
 		<Sidebar
 			collapsible="icon"
 			style={{ height: "100vh" }}
-			className="bg-customgreys-primarybg border-none shadow-lg"
+			className="bg-softblue-50 border-r border-softblue-200 shadow-lg"
 		>
 			<SidebarHeader>
 				<SidebarMenu className="app-sidebar__menu">
 					<SidebarMenuItem>
-						<SidebarMenuButton
-							size="lg"
-							onClick={() => toggleSidebar()}
-							className="group hover:bg-customgreys-secondarybg"
-						>
+						<SidebarMenuButton size="lg" onClick={() => toggleSidebar()} className="group hover:bg-softblue-100">
 							<div className="app-sidebar__logo-container group">
 								<div className="app-sidebar__logo-wrapper">
 									<Image src="/logo.svg" alt="logo" width={25} height={20} className="app-sidebar__logo" />
-									<p className="app-sidebar__title">VazeByte</p>
+									<p className="app-sidebar__title">ВейзЛаб</p>
 								</div>
 								<PanelLeft className="app-sidebar__collapse-icon" />
 							</div>
@@ -76,17 +72,20 @@ const AppSidebar = () => {
 						return (
 							<SidebarMenuItem
 								key={link.href}
-								className={cn("app-sidebar__nav-item", isActive && "bg-gray-800")}
+								className={cn("app-sidebar__nav-item", isActive && "bg-softblue-200")}
 							>
 								<SidebarMenuButton
 									asChild
 									size="lg"
-									className={cn("app-sidebar__nav-button", !isActive && "text-customgreys-dirtyGrey")}
+									className={cn("app-sidebar__nav-button", !isActive && "text-gray-600")}
 								>
 									<Link href={link.href} className="app-sidebar__nav-link" scroll={false}>
-										<link.icon className={isActive ? "text-white-50" : "text-gray-500"} />
+										<link.icon className={isActive ? "text-softblue-800" : "text-gray-600"} />
 										<span
-											className={cn("app-sidebar__nav-text", isActive ? "text-white-50" : "text-gray-500")}
+											className={cn(
+												"app-sidebar__nav-text",
+												isActive ? "text-softblue-800 font-semibold" : "text-gray-600"
+											)}
 										>
 											{link.label}
 										</span>
@@ -102,7 +101,10 @@ const AppSidebar = () => {
 				<SidebarMenu>
 					<SidebarMenuItem>
 						<SidebarMenuButton asChild>
-							<button onClick={() => signOut()} className="app-sidebar__signout">
+							<button
+								onClick={() => signOut()}
+								className="app-sidebar__signout text-gray-600 hover:text-gray-800"
+							>
 								<LogOut className="mr-2 h-6 w-6" />
 								<span>Выйти</span>
 							</button>
