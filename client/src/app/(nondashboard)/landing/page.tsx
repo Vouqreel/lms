@@ -314,16 +314,80 @@ const Landing = () => {
 		{ icon: <TrendingUp className="w-6 h-6" />, text: "Карьерный рост" },
 	];
 
-	// Floating icons for hero section
-	const floatingIcons = [
-		{ icon: <Code className="w-8 h-8" />, color: "text-blue-500", delay: 0 },
-		{ icon: <Lightbulb className="w-10 h-10" />, color: "text-yellow-500", delay: 0.5 },
-		{ icon: <Cpu className="w-7 h-7" />, color: "text-purple-500", delay: 1 },
-		{ icon: <Rocket className="w-9 h-9" />, color: "text-red-500", delay: 1.5 },
-		{ icon: <Heart className="w-6 h-6" />, color: "text-pink-500", delay: 2 },
-		{ icon: <Shield className="w-8 h-8" />, color: "text-green-500", delay: 2.5 },
-		{ icon: <Sparkles className="w-7 h-7" />, color: "text-indigo-500", delay: 3 },
-		{ icon: <Award className="w-9 h-9" />, color: "text-orange-500", delay: 3.5 },
+	// Educational floating elements - diverse course categories with glow
+	const floatingElements = [
+		{
+			type: "badge",
+			text: "JavaScript",
+			color: "bg-yellow-500",
+			textColor: "text-black",
+			glowColor: "shadow-yellow-500/50",
+			delay: 0,
+			position: "top-left",
+		},
+		{
+			type: "badge",
+			text: "English",
+			color: "bg-blue-500",
+			textColor: "text-white",
+			glowColor: "shadow-blue-500/50",
+			delay: 0.4,
+			position: "top-right",
+		},
+		{
+			type: "circle",
+			text: "95%",
+			color: "bg-green-500",
+			textColor: "text-white",
+			glowColor: "shadow-green-500/50",
+			delay: 0.8,
+			position: "center-left",
+		},
+		{
+			type: "badge",
+			text: "Design",
+			color: "bg-pink-500",
+			textColor: "text-white",
+			glowColor: "shadow-pink-500/50",
+			delay: 1.2,
+			position: "center-right",
+		},
+		{
+			type: "circle",
+			text: "24/7",
+			color: "bg-purple-500",
+			textColor: "text-white",
+			glowColor: "shadow-purple-500/50",
+			delay: 1.6,
+			position: "bottom-left",
+		},
+		{
+			type: "badge",
+			text: "Marketing",
+			color: "bg-orange-500",
+			textColor: "text-white",
+			glowColor: "shadow-orange-500/50",
+			delay: 2.0,
+			position: "bottom-right",
+		},
+		{
+			type: "badge",
+			text: "Python",
+			color: "bg-emerald-500",
+			textColor: "text-white",
+			glowColor: "shadow-emerald-500/50",
+			delay: 2.4,
+			position: "extra-left",
+		},
+		{
+			type: "badge",
+			text: "中文",
+			color: "bg-red-500",
+			textColor: "text-white",
+			glowColor: "shadow-red-500/50",
+			delay: 2.8,
+			position: "extra-right",
+		},
 	];
 
 	// Phrases for typewriter effect
@@ -349,21 +413,21 @@ const Landing = () => {
 				{/* Background pattern */}
 				<div className="landing__hero-pattern"></div>
 
-				{/* Floating icons */}
+				{/* Floating Tech Badges and Stats */}
 				<div className="landing__floating-icons">
-					{floatingIcons.map((item, index) => (
+					{floatingElements.map((item, index) => (
 						<motion.div
 							key={index}
-							initial={{ opacity: 0, scale: 0 }}
+							initial={{ opacity: 0, scale: 0, y: 20 }}
 							animate={{
-								opacity: 0.7,
+								opacity: 0.9,
 								scale: 1,
-								y: [0, -20, 0],
-								rotate: [0, 10, -10, 0],
+								y: [0, -10, 0],
+								rotate: [0, 2, -2, 0],
 							}}
 							transition={{
-								opacity: { delay: item.delay, duration: 0.5 },
-								scale: { delay: item.delay, duration: 0.5 },
+								opacity: { delay: item.delay, duration: 0.6 },
+								scale: { delay: item.delay, duration: 0.6 },
 								y: {
 									delay: item.delay + 1,
 									duration: 3,
@@ -371,15 +435,76 @@ const Landing = () => {
 									ease: "easeInOut",
 								},
 								rotate: {
-									delay: item.delay + 1,
+									delay: item.delay + 1.5,
 									duration: 4,
 									repeat: Infinity,
 									ease: "easeInOut",
 								},
 							}}
-							className={`landing__floating-icon landing__floating-icon--${index + 1} ${item.color}`}
+							whileHover={{
+								scale: 1.1,
+								y: -5,
+								transition: { duration: 0.2 },
+							}}
+							className={`landing__floating-element landing__floating-element--${item.position}`}
 						>
-							{item.icon}
+							<div
+								className={`
+								${
+									item.type === "circle"
+										? "w-16 h-16 rounded-full flex items-center justify-center font-bold text-sm"
+										: "px-4 py-2 rounded-full font-semibold text-sm"
+								} 
+								${item.color} ${item.textColor} 
+								shadow-lg ${item.glowColor} shadow-2xl
+								backdrop-blur-sm border border-white/30
+								transform transition-all duration-300
+								hover:shadow-3xl hover:${item.glowColor.replace("/50", "/70")}
+								relative overflow-hidden
+							`}
+								style={{
+									filter: `drop-shadow(0 0 8px ${
+										item.color.includes("yellow")
+											? "#eab308"
+											: item.color.includes("blue")
+											? "#3b82f6"
+											: item.color.includes("green")
+											? "#10b981"
+											: item.color.includes("pink")
+											? "#ec4899"
+											: item.color.includes("purple")
+											? "#a855f7"
+											: item.color.includes("orange")
+											? "#f97316"
+											: item.color.includes("emerald")
+											? "#059669"
+											: item.color.includes("red")
+											? "#ef4444"
+											: "#3b82f6"
+									}40)`,
+									boxShadow: `0 0 20px ${
+										item.color.includes("yellow")
+											? "#eab30820"
+											: item.color.includes("blue")
+											? "#3b82f620"
+											: item.color.includes("green")
+											? "#10b98120"
+											: item.color.includes("pink")
+											? "#ec489920"
+											: item.color.includes("purple")
+											? "#a855f720"
+											: item.color.includes("orange")
+											? "#f9731620"
+											: item.color.includes("emerald")
+											? "#05966920"
+											: item.color.includes("red")
+											? "#ef444420"
+											: "#3b82f620"
+									}`,
+								}}
+							>
+								{item.text}
+							</div>
 						</motion.div>
 					))}
 				</div>
@@ -581,7 +706,7 @@ const Landing = () => {
 
 				<div className="landing__courses">
 					{courses &&
-						courses.slice(0, 8).map((course, index) => (
+						courses.slice(0, 12).map((course, index) => (
 							<motion.div
 								key={course.courseId}
 								initial={{ y: 50, opacity: 0 }}

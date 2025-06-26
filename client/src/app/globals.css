@@ -736,38 +736,43 @@ input[type="color"] {
 		radial-gradient(circle at 40% 40%, #06b6d4 0, transparent 50%);
 }
 
-/* Floating icons container */
+/* Clean floating elements container */
 .landing__floating-icons {
 	@apply absolute inset-0 overflow-hidden pointer-events-none;
 }
 
-.landing__floating-icon {
-	@apply absolute opacity-0;
+.landing__floating-element {
+	@apply absolute opacity-0 transition-all duration-300 ease-out;
 }
 
-.landing__floating-icon--1 {
-	@apply top-[10%] left-[5%];
+.landing__floating-element:hover {
+	@apply pointer-events-auto;
 }
-.landing__floating-icon--2 {
-	@apply top-[15%] right-[10%];
+
+/* Clean floating element positions */
+.landing__floating-element--top-left {
+	@apply top-[15%] left-[10%];
 }
-.landing__floating-icon--3 {
-	@apply top-[50%] left-[10%];
+.landing__floating-element--top-right {
+	@apply top-[20%] right-[15%];
 }
-.landing__floating-icon--4 {
-	@apply top-[70%] right-[15%];
+.landing__floating-element--center-left {
+	@apply top-[50%] left-[8%];
 }
-.landing__floating-icon--5 {
-	@apply bottom-[20%] left-[20%];
+.landing__floating-element--center-right {
+	@apply top-[55%] right-[12%];
 }
-.landing__floating-icon--6 {
-	@apply bottom-[10%] right-[25%];
+.landing__floating-element--bottom-left {
+	@apply bottom-[25%] left-[15%];
 }
-.landing__floating-icon--7 {
-	@apply top-[35%] right-[5%];
+.landing__floating-element--bottom-right {
+	@apply bottom-[30%] right-[10%];
 }
-.landing__floating-icon--8 {
-	@apply bottom-[40%] left-[5%];
+.landing__floating-element--extra-left {
+	@apply top-[35%] left-[5%];
+}
+.landing__floating-element--extra-right {
+	@apply top-[75%] right-[8%];
 }
 
 /* Hero content */
@@ -1004,7 +1009,23 @@ input[type="color"] {
 	@apply from-red-600 to-red-700 hover:from-red-700 hover:to-red-800;
 }
 
-/* Animations */
+/* Enhanced glow animations */
+@keyframes glow-pulse {
+	0%, 100% {
+		filter: drop-shadow(0 0 5px currentColor) brightness(1);
+		box-shadow: 0 0 15px currentColor;
+	}
+	50% {
+		filter: drop-shadow(0 0 15px currentColor) brightness(1.1);
+		box-shadow: 0 0 25px currentColor;
+	}
+}
+
+.landing__floating-element:hover {
+	animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Simple Animations */
 @keyframes float {
 	0%,
 	100% {
